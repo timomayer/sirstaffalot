@@ -1,0 +1,48 @@
+
+.table {
+	width: 100%;
+}
+
+.table tr {
+	border-bottom: 2px solid black;
+}
+
+.table td{
+	text-align:center;
+	}
+
+.table tr:last-child {
+	border-bottom: none;
+}
+
+.table th, .table td {
+	padding: 0;
+	min-width:60px;
+	
+	
+}
+
+.table tr:nth-child(even) {
+	background: rgba(0,0,250,0.3);
+}
+
+.inactive {
+	color: #999;
+	font-size: 0;
+	background-color: rgb(200,200,200);
+}
+.table tr:not(:first-child) th {
+	width:200px;
+	
+	}
+	
+.table > tbody > tr > td,
+.table > tbody > tr > th {
+	padding: 0;
+}
+
+.subTable th {
+	text-align: right;
+}
+
+
