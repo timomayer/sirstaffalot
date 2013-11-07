@@ -6,7 +6,6 @@ var _ = require('underscore');
 
 module.exports = {
     insertAssignable: function (postBody, callback) {
-        log.info('Trying to safe: ' + postBody);
 
         if (postBody.startDate) {
             postBody.startDate = timeConverter.convertFormToDBTime(postBody.startDate);
@@ -15,13 +14,13 @@ module.exports = {
             postBody.endDate = timeConverter.convertFormToDBTime(postBody.endDate);
         }
 
-
         var newAssignable = Assignable.build(postBody);
         newAssignable.save()
             .success(function (result) {
                 callback(null, result);
             })
             .error(function (err) {
+                // Side-Info: ErrNo for bad validation is 1048
                 callback(err);
             });
 
