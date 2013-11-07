@@ -5,7 +5,9 @@ var _ = require('underscore');
 
 module.exports = {
     insertAssignable: function (postBody, callback) {
-
+        console.log(postBody);
+        callback(null);
+        return;
 
         var newAssignable = Assignable.build(postBody);
         newAssignable.save()
