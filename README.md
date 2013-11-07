@@ -40,4 +40,6 @@ ControllerOne.$inject = ['$scope'];
 ControllerTwo.$inject = ['$scope'];
 ```
 
+http://jsfiddle.net/VxafF/
+
 
