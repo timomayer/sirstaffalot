@@ -1,13 +1,15 @@
 var log = require('../utils/logger.js');
+var models = require('../model/model.js');
 
 
 module.exports = {
-//    insertAssignable: function () {
-//
-//    },
-//
-//    insertTeamMember: function () {
-//
-//    }
+    getAssignmentsForTeamMembers: function (fromCW, toCW, callback) {
+
+
+    },
+
+    getAssignemntsForAssignables: function (fromCW, toCW, callback) {
+
+    }
 
 };
