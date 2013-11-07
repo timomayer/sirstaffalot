@@ -2,7 +2,8 @@ sirstaffalot
 ============
 ### Communication between 2 controllers
 
-> var myModule = angular.module('myModule', []);
+```javascript
+var myModule = angular.module('myModule', []);
 
 myModule.run(function($rootScope) {
     /*
@@ -37,5 +38,6 @@ ControllerZero.$inject = ['$scope'];
 ControllerOne.$inject = ['$scope'];
 
 ControllerTwo.$inject = ['$scope'];
+```
 
 
