@@ -1,7 +1,6 @@
 sirstaffalot
 ============
 ### Communication between 2 controllers
-============
 
 var myModule = angular.module('myModule', []);
 
@@ -38,3 +37,4 @@ ControllerZero.$inject = ['$scope'];
 ControllerOne.$inject = ['$scope'];
 
 ControllerTwo.$inject = ['$scope'];
+============
