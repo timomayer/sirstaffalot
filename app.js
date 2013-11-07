@@ -26,7 +26,6 @@ app.use(express.bodyParser());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.set('models', models);
 
 app.post('/insert/assignable', basicData.insertAssignable);
 app.post('/insert/teamMember', basicData.insertTeamMember);
