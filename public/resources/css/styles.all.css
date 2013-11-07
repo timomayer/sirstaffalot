@@ -7,30 +7,17 @@
 @import url('../modules/h5bp/css/normalize.css');
 @import url('../modules/h5bp/css/base.css');
 
-@import url('webfonts.css');
-
 /* import optional modules here */
 /* ###MODULES-MARKER### */
+
+@import url('../modules/bootstrap/css/bootstrap.min.css');
+@import url('../modules/bootstrap/css/bootstrap-theme.min.css');
 
 /* import layout styles */
 @import url('layout.css');
 
 /* import content styles */
 @import url('content.css');
-
-/* add additional content styles here */
-@import url('icons.css');
-
-/* add leafletjs styles */
-@import url('leaflet/leaflet.css');
-@import url('leaflet/custom.css');
-@import url('leaflet/customPop.css');
-@import url('leaflet/L.Control.Pan.css');
-@import url('leaflet/L.Control.Zoomslider.css');
-@import url('leaflet/MarkerCluster.css');
-@import url('leaflet/MarkerCluster.Default.css');
-
-
 
 /* media queries at the end */
 @import url('../modules/h5bp/css/helper.css');
