@@ -1,7 +1,9 @@
-/**
- * Created with IntelliJ IDEA.
- * User: David
- * Date: 07.11.13
- * Time: 16:22
- * To change this template use File | Settings | File Templates.
- */
+var sequelize = require('../model/model.js').sequelize;
+var log = require('../utils/logger.js');
+
+
+sequelize.sync().success(function () {
+    log.info('Database Synced!');
+}).error(function (err) {
+        log.error(err);
+    });
