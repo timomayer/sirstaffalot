@@ -37,7 +37,7 @@
 
 	<body role="document">
 
-		<div class="app-wrapper clearfix">
+		<div class="app-wrapper clearfix" ng-controller="tabCtrl">
 
 			<header class="page-header">
 				<h1><img src="_assets/logo.gif" alt="sir staffalot" /><small>v.0000000001 pre alpha</small></h1>
@@ -45,12 +45,21 @@
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Dashboard</a></li>
-						<li><a href="#">Projekt eintragen</a></li>
+						<li><a href="javascript:void(0);" ng-click="pageTabSelect(0);" ng-class="{true:'active', false:''}[pageTabs[0].active]">Dashboard</a></li>
+						<li><a href="javascript:void(0);" ng-click="pageTabSelect(1);" ng-class="{true:'active', false:''}[pageTabs[1].active]">Projekt eintragen</a></li>
 					</ul>
 				</div>
 			</nav>
-			<div class="main-wrapper clearfix" ng-controller="staffingCtrl">
+
+			<div class="main-wrapper clearfix">
+			<div class="tab-dashboard" ng-controller="dashboardCtrl" ng-class="{true:'visible', false:''}[pageTabs[0].active]">
+
+			</div>
+			<div class="tab-entryProject" ng-controller="entryProjectCtrl" ng-class="{true:'visible', false:''}[pageTabs[1].active]">
+
+			</div>
+
+			<div class="tab-staffing" ng-controller="staffingCtrl" ng-class="{true:'visible', false:''}[pageTabs[3].active]">
 				<div class="row">
 					<div class="col-md-1">.col-md-1</div>
 					<div class="col-md-1">.col-md-1</div>
@@ -226,6 +235,57 @@
 										</table>
 									</td>
 								</tr>
+								<td colspan="14" class="subtableWrapper">
+										<table class="table subTable">
+											<tbody>
+												<tr>
+													<th>Timo</th>
+													<td class="limitedAvailable">0</td>
+													<td class="notAvailable">0</td>
+													<td class="fullyAvailable">0</td>
+													<td class="notAvailable">0</td>
+													<td class="notAvailable">0</td>
+													<td class="limitedAvailable">0</td>
+													<td class="limitedAvailable">0</td>
+													<td class="fullyAvailable">0</td>
+													<td class="limitedAvailable">0</td>
+													<td class="limitedAvailable">0</td>
+
+													<td>-13</td>
+												</tr>
+												<tr>
+													<th>Markus</th>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+
+													<td>-13</td>
+												</tr>
+												<tr>
+													<th>Jan</th>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+
+													<td>-13</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
 								<tr>
                                                                     <th>Projektname</th>
                                                                     <td>0</td>
@@ -294,6 +354,57 @@
 										</table>
 									</td>
 								</tr>
+								<td colspan="14" class="subtableWrapper">
+										<table class="table subTable">
+											<tbody>
+												<tr>
+													<th>Timo</th>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+
+													<td>-13</td>
+												</tr>
+												<tr>
+													<th>Markus</th>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+
+													<td>-13</td>
+												</tr>
+												<tr>
+													<th>Jan</th>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+
+													<td>-13</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
 								<tr>
                                                                     <th>Projektname</th>
                                                                     <td>-1</td>
@@ -462,6 +573,11 @@
 		<script src="resources/modules/bootstrap/js/bootstrap.min.js"></script>
 		<script src="resources/js/main.js"></script>
 		<script src="app/app.js"></script>
+
+		<script src="app/controllers/tabCtrl.js"></script>
+		<script src="app/controllers/dashboardCtrl.js"></script>
+		<script src="app/controllers/entryProjectCtrl.js"></script>
+
 		<script src="app/controllers/staffingCtrl.js"></script>
 		<script src="app/services/staffingStorage.js"></script>
 
