@@ -34,6 +34,7 @@ html {
 	display: none;
 }
 
+.tab-staffing,
 .tab-dashboard.visible,
 .tab-entryProject.visible,
 .tab-staffing.visible {
