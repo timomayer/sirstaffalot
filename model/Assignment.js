@@ -5,7 +5,6 @@ module.exports = function(sequelize, DataTypes) {
         year:               { type: DataTypes.INTEGER, allowNull: false, primaryKey: true },
         days:               { type: DataTypes.FLOAT, allowNull: false}
     }, {
-
         freezeTableName: true
     });
 }
