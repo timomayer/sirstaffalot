@@ -9,14 +9,13 @@
 staffalotApp.controller('staffingPostCtrl', function TodoCtrl($scope, $http) {
 
     $scope.Assignable = {};
-    console.log('hello1')
       $scope.createStaffing = function() {
         $http({
             method : 'POST',
             url : '/insert/assignable',
             data : $scope.Assignable
         }) .success(function (res) {
-            console.log('asd');
+            $scope.sirStaffalotApp;
         });
        }
       });

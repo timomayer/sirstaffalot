@@ -20,6 +20,8 @@
 @import url('content.css');
 @import url('datepicker.css');
 @import url('staffingtable.css');
+@import url('forms.css');
+
 
 /* media queries at the end */
 @import url('../modules/h5bp/css/helper.css');
