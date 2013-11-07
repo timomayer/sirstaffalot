@@ -40,18 +40,14 @@
 .table th,
 .table td {
     padding: 0;
-    min-width: 70px;
+    min-width: 60px;
     border-bottom: 1px solid black;
 }
 
 .table th:last-child,
-.table td:last-child {
-  width: 70px;
+.table td:not(.subTableWrapper):last-child {
+  width: 75px;
   border-left: 1px dotted black;
-}
-
-table.subTable th:last-child {
-  border-left: none;
 }
 
 .table thead th:first-child {
