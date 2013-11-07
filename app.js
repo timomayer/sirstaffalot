@@ -10,7 +10,7 @@ var path = require('path');
 var app = express();
 
 // ********* PROJECT SPECIFIC MODULES
-var models = require('./model');
+var models = require('./model/model.js');
 var log = require('./utils/logger.js');
 var routes = require('./routes');
 
@@ -24,10 +24,6 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
 
 app.get('/', routes.index);
 

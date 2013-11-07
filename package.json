@@ -10,6 +10,6 @@
      "underscore": "*",
      "winston": "*",
      "mysql": "*",
-      "sequelize": "1.6.0"
+      "sequelize": "*"
   }
 }
