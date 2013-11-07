@@ -8,30 +8,21 @@
  */
 staffalotApp.controller('tabCtrl', function tabCtrl($scope, $location, filterFilter) {
 
-    $scope;
+	$scope;
 
-  var ctrl = this,
-      tabs = ctrl.tabs = $scope.tabs = [];
+	$scope.pageTabsx = true;
 
-  ctrl.select = function(tab) {
-	  console.log(tab);
-    angular.forEach(tabs, function(tab) {
-      tab.active = false;
-    });
-    tab.active = true;
-  };
+	$scope.pageTabs =
+			[
+				{id: 1, active: true},
+				{id: 2, active: false}
+			];
 
-	$scope.pageTabs = [];
-    $scope.pageTabs =
-    [
-        { id: 1, active: true },
-        { id: 2, active: false }
-    ];
-    $scope.$watch('pageTabs', function (xnew, xold) {
-		$.each($scope.pageTabs, function(i, el) {
-			if(xnew[i].active === true && xnew[i].active !== xold[i].active) {
+	$scope.pageTabSelect = function(tab) {
+		angular.forEach($scope.pageTabs, function(val, key) {
+			$scope.pageTabs[key].active = false;
+		});
+		$scope.pageTabs[tab].active = true;
+	};
 
-			}
-		})
-    }, true);
 });

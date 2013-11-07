@@ -45,21 +45,21 @@
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="javascript:void(0);" ng-click="pageTabs[0].active = true">Dashboard</a></li>
-						<li><a href="javascript:void(0);" ng-click="pageTabs[1].active = true">Projekt eintragen</a></li>
+						<li><a href="javascript:void(0);" ng-click="pageTabSelect(0);" ng-class="{true:'active', false:''}[pageTabs[0].active]">Dashboard</a></li>
+						<li><a href="javascript:void(0);" ng-click="pageTabSelect(1);" ng-class="{true:'active', false:''}[pageTabs[1].active]">Projekt eintragen</a></li>
 					</ul>
 				</div>
 			</nav>
 
 			<div class="main-wrapper clearfix">
-			<div class="tab-dashboard visible" ng-controller="dashboardCtrl">
+			<div class="tab-dashboard" ng-controller="dashboardCtrl" ng-class="{true:'visible', false:''}[pageTabs[0].active]">
 
 			</div>
-			<div class="tab-entryProject" ng-controller="entryProjectCtrl">
+			<div class="tab-entryProject" ng-controller="entryProjectCtrl" ng-class="{true:'visible', false:''}[pageTabs[1].active]">
 
 			</div>
 
-			<div class="tab-staffing" ng-controller="staffingCtrl">
+			<div class="tab-staffing" ng-controller="staffingCtrl" ng-class="{true:'visible', false:''}[pageTabs[3].active]">
 				<div class="row">
 					<div class="col-md-1">.col-md-1</div>
 					<div class="col-md-1">.col-md-1</div>
