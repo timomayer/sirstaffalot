@@ -53,7 +53,7 @@
 
 			<div class="main-wrapper clearfix">
 			<div class="tab-dashboard" ng-controller="dashboardCtrl" ng-class="{true:'visible', false:''}[pageTabs[0].active]">
-
+				<a href="javascript:void(0);" ng-click="$parent.pageTabSelect(2);" ng-class="{true:'active', false:''}[$parent.pageTabs[2].active]">Staffing</a>
 			</div>
 			<div class="tab-entryProject" ng-controller="entryProjectCtrl" ng-class="{true:'visible', false:''}[pageTabs[1].active]">
 
