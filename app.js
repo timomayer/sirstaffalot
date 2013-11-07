@@ -11,7 +11,7 @@ var http = require('http');
 var path = require('path');
 
 var app = express();
-var mysql = require('./model/mySQLConnector.js');
+var mysql = require('./model/db.js');
 var log = require('./utils/logger.js');
 
 
