@@ -18,7 +18,7 @@
 
 /* import content styles */
 @import url('content.css');
-@import url('staffingTable.css');
+@import url('datepicker.css');
 
 /* media queries at the end */
 @import url('../modules/h5bp/css/helper.css');
