@@ -1,4 +1,5 @@
 var models = require('../model/model.js');
+var _ = require('underscore');
 var teamMembersJson = require('./testdata/teamMembers.json');
 var assignablesJson = require('./testdata/assignables.json');
 var log = require('../utils/logger.js');
@@ -9,6 +10,13 @@ var Assignable = models['Assignable'];
 log.info('Adding testdata')
 log.info('TeamMembers: '+teamMembersJson);
 
+_.each(teamMembersJson, function(teamMember) {
+   TeamMember
+       .destroy({"id":teamMember.id})
+       .success(function(destroyedTeamMember) {
+            log.info('TeamMember destroyed: '+destroyedTeamMember);
+       });
+});
 
 TeamMember
     .bulkCreate(teamMembersJson)
