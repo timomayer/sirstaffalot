@@ -10,8 +10,16 @@
 var winston = require('winston');
 
 
-exports.logger = new (winston.Logger)({
+var logger = new (winston.Logger)({
     transports: [
-        new (winston.transports.Console)(),
+        new (winston.transports.Console)({
+            level: 'debug',
+            colorize: true,
+            timestamp: true
+        })
+//        new (winston.transports.File)({ filename: 'somefile.log' })
     ]
 });
+
+
+module.exports = logger;

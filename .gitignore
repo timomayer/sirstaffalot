@@ -3,3 +3,4 @@ node_modules
 *.iml
 *.txt
 *.jar
+.DS_Store
