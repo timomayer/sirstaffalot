@@ -14,12 +14,9 @@
 	box-sizing: border-box;
 }
 
-html,
-body {
-	min-height: 100%;
-}
-
-body {
+body,
+html {
+	height: 100%;
 	background-color: #ccc;
 }
 
@@ -37,7 +34,6 @@ body {
 	display: none;
 }
 
-.tab-staffing,
 .tab-dashboard.visible,
 .tab-entryProject.visible,
 .tab-staffing.visible {
