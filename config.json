@@ -8,10 +8,10 @@
         "user_sessions": false,
         "loglevel" : "debug",
         "mySQL": {
-            "host": "192.168.80.232",
+            "host": "192.168.80.225",
             "port": 3306,
-            "dbName" : "sirstaffelot",
-            "user": "sirstaffalot",
+            "dbName" : "sirstaffalot",
+            "username": "sirstaffalot",
             "password": "fat$sirstaff"
         }
 
@@ -25,8 +25,8 @@
         "user_sessions": true,
         "loglevel" : "warn",
         "mySQL": {
-            "host": "192.168.80.232",
-            "port": 3306,
+            "host": "0",
+            "port": 0,
             "dbName" : "sirstaffelot",
             "user": "sirstaffalot",
             "password": "fat$sirstaff"
