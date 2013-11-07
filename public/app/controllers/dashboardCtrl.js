@@ -9,4 +9,5 @@
 staffalotApp.controller('dashboardCtrl', function dashboardCtrl($scope, $location, filterFilter) {
 
     $scope;
+
 });
