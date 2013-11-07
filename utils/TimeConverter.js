@@ -33,8 +33,8 @@ exports.convertCWStringToTimeJSON = function (cwString) {
  * @returns {string}
  */
 exports.convertYearAndCWToCWString = function(year, cw){
-    if(!year || !cw){
-        throw new Error('Missing parameter...');
+    if(!year || typeof(year) !== 'string' || !cw || typeof(cw) !== 'string'){
+        throw new Error('Missing or wrong parameter...');
     }
     return year + '_' + cw;
 }
