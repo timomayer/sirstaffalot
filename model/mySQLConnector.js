@@ -12,7 +12,7 @@ var connection = mysql.createConnection({
     user     : 'sirstaffalot',
     password : 'fat$sirstaff'
 });
-         log.info('test');
+
 connection.connect(function(err){
     if(err){
         log.info('Test-Timeout');

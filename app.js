@@ -1,6 +1,10 @@
 /**
  * Module dependencies.
  */
+var config = require('./config.json');
+GLOBAL.config = config;
+
+
 var express = require('express');
 var routes = require('./routes');
 var http = require('http');
@@ -8,6 +12,7 @@ var path = require('path');
 
 var app = express();
 var mysql = require('./model/mySQLConnector.js');
+var log = require('./utils/logger.js');
 
 
 // all environments
@@ -31,5 +36,5 @@ app.get('/', routes.index);
 
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+  log.info('Express server listening on port ' + app.get('port'));
 });

@@ -20,7 +20,7 @@ else {
 }
 var log = new (winston.Logger)({
     transports: [
-        new (winston.transports.Console)({ level: loglevel, json: false, timestamp: true }),
+        new (winston.transports.Console)({ level: loglevel, json: false, timestamp: true, colorize: true }),
         //new winston.transports.File({ filename: __dirname + '/debug.log', json: false })
     ],
     exceptionHandlers: [

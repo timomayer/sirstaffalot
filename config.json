@@ -1,5 +1,5 @@
 {
-    "version": "v.0.6 (Sprint 3)",
+    "version": "v.0.1",
     "development": {
         "port": 3000,
         "deliver_static": true,
@@ -7,15 +7,12 @@
         "use_express_errorHandler": true,
         "user_sessions": false,
         "loglevel" : "debug",
-        "mongoDB": {
-            "host": "mongodb://fatfred.virtual-identity.net",
-            "port": 27017,
-            "dbName" : "leadbox"
-        },
-        "solr" : {
-            "host" : "fatfred.virtual-identity.net",
-            "port" : 8080,
-            "corepath" : "/solr-lead/collection1/"
+        "mySQL": {
+            "host": "192.168.80.232",
+            "port": 3306,
+            "dbName" : "sirstaffelot",
+            "user": "sirstaffalot",
+            "password": "fat$sirstaff"
         }
 
 
@@ -27,16 +24,12 @@
         "use_express_errorHandler": false,
         "user_sessions": true,
         "loglevel" : "warn",
-        "mongoDB": {
-            "host": "",
-            "port": 0,
-            "dbName" : ""
-        },
-        "solr" : {
-            "host" : "",
-            "port" : 0,
-            "corepath": ""
-
+        "mySQL": {
+            "host": "192.168.80.232",
+            "port": 3306,
+            "dbName" : "sirstaffelot",
+            "user": "sirstaffalot",
+            "password": "fat$sirstaff"
         }
     }
 }
