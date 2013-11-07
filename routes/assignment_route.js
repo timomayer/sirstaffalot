@@ -4,11 +4,11 @@ var log = require('../utils/logger.js');
 
 exports.teamMemberrAssignments = function (req, res, next) {
     try {
-        if (!req.body) {
+        if (!req.query || !req.query.fromCW || !req.query.toCW) {
             throw new Error('Missing Parameters...');
         }
-        var fromCW = timeConverter.convertCWStringToTimeJSON(req.body.fromCW);
-        var toCW = timeConverter.convertCWStringToTimeJSON(req.body.toCW);
+        var fromCW = timeConverter.convertCWStringToTimeJSON(req.query.fromCW);
+        var toCW = timeConverter.convertCWStringToTimeJSON(req.query.toCW);
     }
     catch (err) {
         next(err);
@@ -25,11 +25,11 @@ exports.teamMemberrAssignments = function (req, res, next) {
 
 exports.assignableAssignments = function (req, res, next) {
     try {
-        if (!req.body) {
+        if (!req.query || !req.query.fromCW || !req.query.toCW) {
             throw new Error('Missing Parameters...');
         }
-        var fromCW = timeConverter.convertCWStringToTimeJSON(req.body.fromCW);
-        var toCW = timeConverter.convertCWStringToTimeJSON(req.body.toCW);
+        var fromCW = timeConverter.convertCWStringToTimeJSON(req.query.fromCW);
+        var toCW = timeConverter.convertCWStringToTimeJSON(req.query.toCW);
     }
     catch (err) {
         next(err);
