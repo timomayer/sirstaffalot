@@ -13,6 +13,7 @@ exports.insertAssignable = function (req, res, next) {
             next(err);
         }
         else {
+            log.info('Result was: ' , result);
             res.send(200, 'Assignable was saved succesfully');
         }
     });

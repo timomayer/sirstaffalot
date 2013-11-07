@@ -8,8 +8,9 @@ var config = require('../config.json').development.mySQL;
  */
 var sequelize = new Sequelize(config.dbName, config.username, config.password, {
     host: config.host,
-    port: config.port
-});
+    port: config.port,
+    dialect: 'mysql'
+})
 
 /**
  * MODEL IMPLEMENATION
