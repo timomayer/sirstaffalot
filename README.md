@@ -2,9 +2,9 @@ sirstaffalot
 ============
 ### Communication between 2 controllers
 
-var myModule = angular.module('myModule', []);
+> var myModule = angular.module('myModule', []);
 
-<myModule.run(function($rootScope) {
+myModule.run(function($rootScope) {
     /*
         Receive emitted message and broadcast it.
         Event names must be distinct or browser will blow up!
@@ -36,6 +36,6 @@ ControllerZero.$inject = ['$scope'];
 
 ControllerOne.$inject = ['$scope'];
 
-ControllerTwo.$inject = ['$scope'];>
+ControllerTwo.$inject = ['$scope'];
 
 
