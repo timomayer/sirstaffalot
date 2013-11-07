@@ -32,4 +32,6 @@ models.forEach(function (model) {
     m.Assignable.hasMany(m.TeamMember, { joinTableModel: m.Assignment });
 })(module.exports);
 
+
+
 module.exports.sequelize = sequelize;
