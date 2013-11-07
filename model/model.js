@@ -2,6 +2,7 @@ var log = require('../utils/logger.js');
 var Sequelize = require("sequelize");
 var config = require('../config.json').development.mySQL;
 
+
 /**
  * SEQUELIZE CONNECTION
  */

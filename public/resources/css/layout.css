@@ -14,8 +14,7 @@
 	box-sizing: border-box;
 }
 
-html,
-body {
+html {
 	height: 100%;
 }
 
@@ -29,4 +28,16 @@ body {
 	margin: 0 auto;
 	padding: 0 10px;
 	background: #fff;
+}
+
+.tab-dashboard,
+.tab-entryProject,
+.tab-staffing {
+	display: none;
+}
+
+.tab-dashboard.visible,
+.tab-entryProject.visible,
+.tab-staffing.visible {
+	display: block;
 }

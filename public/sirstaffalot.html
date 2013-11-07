@@ -37,7 +37,7 @@
 
 	<body role="document">
 
-		<div class="app-wrapper clearfix">
+		<div class="app-wrapper clearfix" ng-controller="tabCtrl">
 
 			<header class="page-header">
 				<h1><img src="_assets/logo.gif" alt="sir staffalot" /><small>v.0000000001 pre alpha</small></h1>
@@ -45,12 +45,21 @@
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Dashboard</a></li>
-						<li><a href="#">Projekt eintragen</a></li>
+						<li><a href="javascript:void(0);" ng-click="pageTabs[0].active = true">Dashboard</a></li>
+						<li><a href="javascript:void(0);" ng-click="pageTabs[1].active = true">Projekt eintragen</a></li>
 					</ul>
 				</div>
 			</nav>
-			<div class="main-wrapper clearfix" ng-controller="staffingCtrl">
+
+			<div class="main-wrapper clearfix">
+			<div class="tab-dashboard visible" ng-controller="dashboardCtrl">
+
+			</div>
+			<div class="tab-entryProject" ng-controller="entryProjectCtrl">
+
+			</div>
+
+			<div class="tab-staffing" ng-controller="staffingCtrl">
 				<div class="row">
 					<div class="col-md-1">.col-md-1</div>
 					<div class="col-md-1">.col-md-1</div>
@@ -69,8 +78,8 @@
 				<div class="row">
 					<div class="span12">
 						<table class="table">
-							<thead>Projekte</thead>
-							<tbody>
+							<h2>Projekte</h2>
+							<thead>
 								<tr>
 									<th></th>
 									<th>KW1</th>
@@ -87,6 +96,8 @@
 									<th class="remainingTW">Gesamt</th>
 
 								</tr>
+                                                        </thead>
+                                                        <tbody>
 								<tr>
 									<th>Langer Projektname: Lorem to the ipsum</th>
 									<td>0</td>
@@ -103,7 +114,7 @@
 									<td>-13</td>
 								</tr>
 
-								<tr>
+								<tr class="test">
 									<td colspan="14" class="subtableWrapper">
 										<table class="table subTable">
 											<tbody>
@@ -210,7 +221,7 @@
 				<div class="row">
 					<div class="span12">
 						<table class="table">
-							<thead>Projekte</thead>
+							<h2>Projekte</h2>
 							<tbody>
 								<tr class="calendarBar">
 									<th></th>
@@ -272,6 +283,11 @@
 		<script src="resources/modules/bootstrap/js/bootstrap.min.js"></script>
 		<script src="resources/js/main.js"></script>
 		<script src="app/app.js"></script>
+
+		<script src="app/controllers/tabCtrl.js"></script>
+		<script src="app/controllers/dashboardCtrl.js"></script>
+		<script src="app/controllers/entryProjectCtrl.js"></script>
+
 		<script src="app/controllers/staffingCtrl.js"></script>
 		<script src="app/services/staffingStorage.js"></script>
 

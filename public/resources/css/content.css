@@ -18,3 +18,15 @@ body a {
 	text-decoration: none;
 	color: #0099d2;
 }
+
+.row {
+    margin: 0;
+}
+
+h2 {
+    margin: 30px 0 0;
+}
+
+table {
+    margin: 10px 0 0;
+}
