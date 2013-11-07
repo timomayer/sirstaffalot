@@ -9,7 +9,6 @@ var Assignable = models['Assignable'];
 log.info('Adding testdata')
 log.info('TeamMembers: '+teamMembersJson);
 
-
 TeamMember
     .bulkCreate(teamMembersJson)
     .success(function() {
