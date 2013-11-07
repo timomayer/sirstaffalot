@@ -16,7 +16,7 @@ staffalotApp.controller('staffingPostCtrl', function TodoCtrl($scope, $http) {
             url : '/insert/assignable',
             data : $scope.Assignable
         }) .success(function (res) {
-    console.log('asd');
-});
-      }
+            console.log('asd');
+        });
+       }
       });
