@@ -4,7 +4,7 @@ sirstaffalot
 
 var myModule = angular.module('myModule', []);
 
-myModule.run(function($rootScope) {
+<myModule.run(function($rootScope) {
     /*
         Receive emitted message and broadcast it.
         Event names must be distinct or browser will blow up!
@@ -36,7 +36,6 @@ ControllerZero.$inject = ['$scope'];
 
 ControllerOne.$inject = ['$scope'];
 
-ControllerTwo.$inject = ['$scope'];
-============> We loved with a love that was more than love
+ControllerTwo.$inject = ['$scope'];>
 
 
