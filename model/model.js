@@ -6,11 +6,13 @@ var config = require('../config.json').development.mySQL;
 /**
  * SEQUELIZE CONNECTION
  */
+
 var sequelize = new Sequelize(config.dbName, config.username, config.password, {
     host: config.host,
     port: config.port,
+    logging: log.info,
     dialect: 'mysql'
-})
+});
 
 /**
  * MODEL IMPLEMENATION
@@ -29,11 +31,10 @@ models.forEach(function (model) {
 });
 
 // describe relationships
-(function(m) {
+(function (m) {
     m.TeamMember.hasMany(m.Assignable, { joinTableModel: m.Assignment });
     m.Assignable.hasMany(m.TeamMember, { joinTableModel: m.Assignment });
 })(module.exports);
-
 
 
 module.exports.sequelize = sequelize;
