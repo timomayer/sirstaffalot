@@ -14,6 +14,8 @@ staffalotApp.controller('staffingCtrl', function TodoCtrl($scope, $location, fil
     $scope.editedTodo = null;
     $scope.filter = {};
     $scope.filter.cat = {};
+
+	alert(1);
 /*
     leadStorage.get().success(function (data, status, headers, config) {
         $scope.leads = data;
