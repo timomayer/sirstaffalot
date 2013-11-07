@@ -1,8 +1,8 @@
 
 .table {
-	width: 100%;
-        margin-bottom: 0;
-        border-top: none;
+    width: 100%;
+    margin-bottom: 0;
+    border-top: none;
 }
 
 .table > thead > tr > th,
@@ -14,48 +14,60 @@
     border-top: none;
 }
 
-.table tr,
-.table > thead > tr > th {
-    border-bottom: 2px solid black;
-}
-
-.table td{
-	text-align:center;
-	}
-
-.table tr:last-child {
-	border-bottom: none;
-}
-
-.table th, .table td {
-	padding: 0;
-	min-width:60px;
-	
-	
-}
-
-.table tr:nth-child(even) {
-	background: rgba(0,0,250,0.3);
-}
-
-.inactive {
-	color: #999;
-	font-size: 0;
-	background-color: rgb(200,200,200);
-}
-.table tr:not(:first-child) th {
-	width:200px;
-	
-	}
-
 .table > thead > tr > th,
 .table > tbody > tr > td,
 .table > tbody > tr > th {
-	padding: 0;
+    padding: 0;
+}
+
+.table > thead > tr > th {
+    border-bottom: 1px solid black;
+}
+
+.table tr:nth-child(even) {
+    background-color: rgba(0,0,250,0.3);
+}
+
+.table tr:not(:first-child) th {
+    width:200px;
+}
+
+.table tr:last-child {
+    border-bottom: none;
+}
+
+.table td {
+    text-align:center;
+}
+
+.table th,
+.table td {
+    padding: 0;
+    min-width:60px;
+    border-bottom: 1px solid black;
+}
+
+.subTable {
+    margin-top: 0;
+}
+
+.subTable tr:last-child th,
+.subTable tr:last-child td {
+    border-bottom: none;
+}
+
+.table .subTable tr {
+    background-color: rgba(320,20,220,1);
 }
 
 .subTable th {
-	text-align: right;
+    text-align: right;
+}
+
+.inactive {
+    color: #999;
+    font-size: 0;
+    background-color: rgb(200,200,200);
 }
 
 
