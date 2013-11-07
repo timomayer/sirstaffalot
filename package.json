@@ -9,6 +9,7 @@
     "express": "3.4.4",
      "underscore": "*",
      "winston": "*",
-     "mysql": "*"
+     "mysql": "*",
+      "sequelize": "1.6.0"
   }
 }
