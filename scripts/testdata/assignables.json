@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1,
+        "name": "Fancy SUV",
+        "fromEmail": "mareike@vi.com",
+        "fromBusinessUnit": "CC",
+        "days": 5,
+        "startDate": "2013-09-09 00:00:00",
+        "endDate": "2013-10-09 00:00:00",
+        "description": "egestas nunc sed libero. Proin sed turpis nec mauris blandit mattis. Cras eget nisi dictum augue malesuada malesuada. Integer id magna et ipsum cursus vestibulum. Mauris magna. Duis dignissim tempor arcu. Vestibulum ut eros non enim commodo hendrerit.",
+        "timelineNumber": "4711-2"
+    },
+    {
+        "id": 2,
+        "name": "Crazy App",
+        "fromEmail": "johanna@vi.com",
+        "fromBusinessUnit": "RB",
+        "days": 10.5,
+        "startDate": "2013-11-09 00:00:00",
+        "endDate": "2013-12-01 00:00:00",
+        "description": "cursus in, hendrerit consectetuer, cursus et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus. Nullam suscipit, est ac facilisis facilisis, magna tellus faucibus leo, in lobortis tellus justo sit amet nulla. Donec non justo. Proin non massa non ante bibendum ullamcorper. Duis cursus, diam at pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus elit pede, malesuada vel, venenatis vel, faucibus id, libero. Donec consectetuer mauris id sapien. Cras dolor dolor, tempus non, lacinia at, iaculis quis, pede. Praesent eu dui.",
+        "timelineNumber": "0815"
+    },
+    {
+        "id": 3,
+        "name": "Magix",
+        "fromEmail": "sven@vi.com",
+        "fromBusinessUnit": "B2B",
+        "days": 13.75,
+        "startDate": "2013-10-01 00:00:00",
+        "endDate": "2013-10-30 00:00:00",
+        "description": "eu lacus. Quisque imperdiet, erat nonummy ultricies ornare.",
+        "timelineNumber": "42"
+    },
+    {
+        "id": 4,
+        "name": "Leadböxle",
+        "fromEmail": "benedikt@vi.com",
+        "fromBusinessUnit": "B2B",
+        "days": 50,
+        "startDate": "2013-09-29 00:00:00",
+        "endDate": "2014-01-06 00:00:00",
+        "description": "Suspendisse aliquet molestie tellus. Aenean egestas hendrerit neque. In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus rutrum urna, nec luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus. Donec nibh enim, gravida sit amet, dapibus id, blandit at, nisi. Cum sociis natoque penatibus et",
+        "timelineNumber": null
+    },
+    {
+        "id": 5,
+        "name": "Fettes Brot",
+        "fromEmail": "karl@vi.com",
+        "fromBusinessUnit": "MP",
+        "days": 10,
+        "startDate": "2013-12-11 00:00:00",
+        "endDate": "2014-01-03 00:00:00",
+        "description": "",
+        "timelineNumber": "666"
+    },
+    {
+        "id": 6,
+        "name": "Fancy Stuff",
+        "fromEmail": "moni@vi.com",
+        "fromBusinessUnit": "MP",
+        "days": 2.25,
+        "startDate": "2014-02-01 00:00:00",
+        "endDate": "2014-02-05 00:00:00",
+        "description": "Keine Angaben",
+        "timelineNumber": "00"
+    },
+    {
+        "id": 7,
+        "name": "vacation"
+    },
+    {
+        "id": 8,
+        "name": "public holiday"
+    },
+    {
+        "id": 9,
+        "name": "sick"
+    },
+    {
+        "id": 10,
+        "name": "team orga"
+    }
+]
