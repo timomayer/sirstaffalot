@@ -50,10 +50,6 @@
   border-left: 1px dotted black;
 }
 
-table.subTable th:last-child {
-  border-left: none;
-}
-
 .table thead th:first-child {
     width: 20%;
     border-right: 1px dotted #000;
@@ -81,6 +77,10 @@ table.subTable th:last-child {
 
 .subTable th {
     text-align: right;
+}
+
+.subTableWrapper .subTable th:last-child {
+  border-left-width: 0;
 }
 
 .subTable td,
