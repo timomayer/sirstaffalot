@@ -13,13 +13,13 @@ var connection = mysql.createConnection({
     password : 'fat$sirstaff'
 });
 
-connection.connect(function(err){
-    if(err){
-        log.info('Test-Timeout');
-    }
-    else {
-        console.log('MySQL Connected!');
-    }
-});
+//connection.connect(function(err){
+//    if(err){
+//        log.info('Test-Timeout');
+//    }
+//    else {
+//        console.log('MySQL Connected!');
+//    }
+//});
 
 exports.connection;
