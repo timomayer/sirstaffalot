@@ -12,24 +12,24 @@
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
     border-top: none;
-}
-
-.table > thead > tr > th,
-.table > tbody > tr > td,
-.table > tbody > tr > th {
-    padding: 0;
+    padding: 8px 0;
+    vertical-align: middle;
 }
 
 .table > thead > tr > th {
     border-bottom: 1px solid black;
 }
 
-.table tr:nth-child(even) {
-    background-color: rgba(0,0,250,0.3);
+.table tr {
+    //background-color: rgba(0,0,250,0.3);
+}
+
+.table thead:first-child th {
+    text-align: center
 }
 
 .table tr:not(:first-child) th {
-    width:200px;
+    width:20%;
 }
 
 .table tr:last-child {
@@ -47,6 +47,10 @@
     border-bottom: 1px solid black;
 }
 
+.table > tbody > tr > td.subTableWrapper {
+    padding: 0;
+}
+
 .subTable {
     margin-top: 0;
 }
@@ -57,7 +61,8 @@
 }
 
 .table .subTable tr {
-    background-color: rgba(320,20,220,1);
+    color: rgba(255,255,255,1);
+    background-color: rgba(120,120,220,1);
 }
 
 .subTable th {
