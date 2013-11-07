@@ -18,6 +18,7 @@
 
 /* import content styles */
 @import url('content.css');
+@import url('staffingTable.css');
 
 /* media queries at the end */
 @import url('../modules/h5bp/css/helper.css');
