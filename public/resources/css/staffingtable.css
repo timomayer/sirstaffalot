@@ -45,7 +45,7 @@
 }
 
 .table th:last-child,
-.table td:last-child {
+.table td:not(.subTableWrapper):last-child {
   width: 70px;
   border-left: 1px dotted black;
 }
@@ -77,10 +77,6 @@
 
 .subTable th {
     text-align: right;
-}
-
-.subTableWrapper .subTable th:last-child {
-  border-left-width: 0;
 }
 
 .subTable td,
