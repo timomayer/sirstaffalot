@@ -10,12 +10,11 @@ staffalotApp.controller('tabCtrl', function tabCtrl($scope, $location, filterFil
 
 	$scope;
 
-	$scope.pageTabsx = true;
-
 	$scope.pageTabs =
 			[
-				{id: 1, active: true},
-				{id: 2, active: false}
+				{active: true},
+				{active: false},
+				{active: false}
 			];
 
 	$scope.pageTabSelect = function(tab) {
