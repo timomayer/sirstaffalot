@@ -1,0 +1,8 @@
+[
+    { "id":1, "name": "David", "email": "david.losert@virtual-identity.com"},
+    { "id":2, "name": "Markus", "email": "markus.pleines@virtual-identity.com"},
+    { "id":3, "name": "Timo", "email": "timo.mayer@virtual-identity.com"},
+    { "id":4, "name": "Jan", "email": "jan.schaefer@virtual-identity.com"},
+    { "id":5, "name": "Jonas", "email": "jonas.begemann@virtual-identity.com"},
+    { "id":6, "name": "Armin", "email": "armin.weisser@virtual-identity.com"}
+]
