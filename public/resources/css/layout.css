@@ -1,0 +1,165 @@
+/**
+ * @project       default project
+ * @package       html-css-js
+ * @author        VI
+**/
+
+/**
+ * @section  layout
+**/
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.app-wrapper {
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0 30px;
+	border: #ccc solid;
+	border-width: 0 1px;
+	/*-webkit-box-shadow: 0px 0px 5px 3px #cfdbdf;
+	box-shadow: 0px 0px 5px 3px #cfdbdf;*/
+}
+
+#header {
+	padding: 25px 0;
+}
+
+#header .logo {
+	display: block;
+	float: right;
+}
+
+#navigation {
+	background-color: #cfdbdf;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+}
+
+#navigation ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+#navigation li {
+	display: block;
+	float: left;
+}
+
+.lead-overview {
+	display: block;
+}
+
+#panel-left {
+	width: 270px;
+	margin: 23px 30px 0 -30px;
+	float: left;
+	-webkit-box-shadow: 4px 0px 4px 0px #bcbcbc,
+						4px 0px 4px 0px #bcbcbc;
+	box-shadow: 4px 0px 4px 0px #bcbcbc,
+				0px 4px 4px 0px #bcbcbc;
+}
+
+#panel-left .filter {
+	padding: 0 10px 0 30px;
+}
+
+#main {
+	margin: 9px 0 0;
+	overflow: hidden;
+}
+
+.page-tabs {
+	width: 100%;
+}
+
+.page-tabs ul {
+	margin: 0;
+	padding: 0;
+}
+
+.page-tabs li {
+	float: left;
+}
+
+.lead-listview {
+	display: block;
+	margin: 5px 0;
+	padding: 0;
+}
+
+.lead-listview > li {
+	display: block;
+	padding: 14px 0 17px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+
+.lead-listview .img-wrapper {
+	margin-top: 6px;
+	float: left;
+	padding: 0 20px 0 0;
+}
+
+.lead-listview .img-wrapper img {
+	display: block;
+}
+
+.lead-listview li ul {
+	 overflow: hidden;
+	 padding: 0;
+	 margin: 0;
+}
+
+.lead-listview li ul li {
+	display: inline-block;
+	width: 49%;
+	padding: 0 20px 3px 0;
+	overflow: hidden;
+	vertical-align: top;
+}
+
+.lead-detail {
+	display: none;
+}
+
+.lead-detail .lead-detail-nav {
+	margin: 20px 0 0;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #000;
+}
+
+.lead-detail header {
+	margin: 18px 0 0;
+}
+
+.lead-detail header > h1.page-headline {
+	margin-top: 0;
+	padding: 5px 0 0;
+}
+
+.lead-detail .lead-info {
+	margin: 14px 0 0;
+}
+
+.lead-detail .col-left {
+	width: 300px;
+}
+
+.lead-detail .col-right {
+	width: 630px;
+	margin: 0 0 0 30px;
+}

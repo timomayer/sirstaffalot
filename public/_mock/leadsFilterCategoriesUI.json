@@ -1,0 +1,63 @@
+﻿[
+    {
+        "id": "score",
+        "label": "Scoring",
+        "values": [
+            {
+                "id": "high",
+                "label": "High",
+                "minScore": 80
+            },
+            {
+                "id": "medium",
+                "label": "Medium",
+                "minScore": 45
+            },
+            {
+                "id": "low",
+                "label": "Low",
+                "minScore": 0
+            }
+        ]
+    },
+    {
+        "id": "region",
+        "label": "Vertriebsregion",
+        "values": [
+            {
+                "id": "freiburg",
+                "label": "Freiburg"
+            },
+            {
+                "id": "schwarzwald",
+                "label": "Schwarzwald"
+            },
+            {
+                "id": "basel",
+                "label": "Basel"
+            }
+        ]
+    },
+    {
+        "id": "produktgruppen",
+        "label": "Produktgruppen",
+        "values": [
+            {
+                "id": "fassade",
+                "label": "Fassade"
+            },
+            {
+                "id": "innenraum",
+                "label": "Innenraum"
+            },
+            {
+                "id": "akustik",
+                "label": "Akustik"
+            },
+            {
+                "id": "lacke",
+                "label": "Lacke"
+            }
+        ]
+    }
+]

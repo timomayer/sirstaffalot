@@ -1,0 +1,79 @@
+
+
+# ----------------------------------------------------------------------
+# NOTE: You should use this webserver configuration in your live environment too.
+# ----------------------------------------------------------------------
+
+# ----------------------------------------------------------------------
+# Better website experience for IE users
+# ----------------------------------------------------------------------
+
+# Force the latest IE version, in various cases when it may fall back to IE7 mode
+# github.com/rails/rails/commit/123eb25#commitcomment-118920
+# Use ChromeFrame if it's installed for a better experience for the poor IE folk
+
+<IfModule mod_headers.c>
+	Header set X-UA-Compatible "IE=Edge,chrome=1"
+	# mod_headers can't match by content-type, but we don't want to send this header on *everything*...
+	<FilesMatch "\.(appcache|crx|css|eot|gif|htc|ico|jpe?g|js|m4a|m4v|manifest|mp4|oex|oga|ogg|ogv|otf|pdf|png|safariextz|svg|svgz|ttf|vcf|webm|webp|woff|xml|xpi)$">
+		Header unset X-UA-Compatible
+	</FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Proper MIME type for all files
+# ----------------------------------------------------------------------
+<IfModule mod_mime.c>
+	# JavaScript
+	# Normalize to standard type (it's sniffed in IE anyways)
+	# tools.ietf.org/html/rfc4329#section-7.2
+	AddType application/javascript js jsonp
+	AddType application/json json
+
+	# Audio
+	AddType audio/ogg oga ogg
+	AddType audio/mp4 m4a f4a f4b
+
+	# Video
+	AddType video/ogg ogv
+	AddType video/mp4 mp4 m4v f4v f4p
+	AddType video/webm webm
+	AddType video/x-flv flv
+
+	# SVG
+	# Required for svg webfonts on iPad
+	# twitter.com/FontSquirrel/status/14855840545
+	AddType image/svg+xml svg svgz
+	AddEncoding gzip svgz
+
+	# Webfonts
+	AddType application/vnd.ms-fontobject eot
+	AddType application/x-font-ttf ttf ttc
+	AddType font/opentype otf
+	AddType application/x-font-woff woff
+
+	# Assorted types
+	AddType image/x-icon ico
+	AddType image/webp webp
+	AddType text/cache-manifest appcache manifest
+	AddType text/x-component htc
+	AddType application/xml rss atom xml rdf
+	AddType application/x-chrome-extension crx
+	AddType application/x-opera-extension oex
+	AddType application/x-xpinstall xpi
+	AddType application/octet-stream safariextz
+	AddType application/x-web-app-manifest+json webapp
+	AddType text/x-vcard vcf
+	AddType application/x-shockwave-flash swf
+	AddType text/vtt vtt
+</IfModule>
+
+# ----------------------------------------------------------------------
+# UTF-8 encoding
+# ----------------------------------------------------------------------
+
+# Use UTF-8 encoding for anything served text/plain or text/html
+AddDefaultCharset utf-8
+
+# Force UTF-8 for a number of file formats
+AddCharset utf-8 .atom .css .js .json .rss .vtt .xml

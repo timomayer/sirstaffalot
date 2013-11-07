@@ -1,0 +1,42 @@
+/**
+ * @project       default project
+ * @package       html-css-js
+ * @author        VI
+**/
+
+/**
+ * @section  webfonts
+**/
+
+@font-face {
+	font-family: 'LatoRegular';
+	src: url('../fonts/lato/lato-regular.eot');
+	src: url('../fonts/lato/lato-regular.eot?#iefix') format('eot'),
+		url('../fonts/lato/lato-regular.woff') format('woff'),
+		url('../fonts/lato/lato-regular.ttf') format('truetype');
+
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoBold';
+	src: url('../fonts/lato/lato-bold.eot');
+	src: url('../fonts/lato/lato-bold.eot?#iefix') format('eot'),
+		url('../fonts/lato/lato-bold.woff') format('woff'),
+		url('../fonts/lato/lato-bold.ttf') format('truetype');
+
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'LatoItalic';
+	src: url('../fonts/lato/lato-italic.eot');
+	src: url('../fonts/lato/lato-italic.eot?#iefix') format('eot'),
+		url('../fonts/lato/lato-italic.woff') format('woff'),
+		url('../fonts/lato/lato-italic.ttf') format('truetype');
+
+	font-weight: normal;
+	font-style: italic;
+}

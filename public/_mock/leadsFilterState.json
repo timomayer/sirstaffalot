@@ -1,0 +1,12 @@
+{
+	"cat":{
+		"score":{
+			"high":true,
+			"medium":true
+		},
+		"region":{
+			"basel":true
+		}
+	},
+	"searchTerm":"test"
+}
