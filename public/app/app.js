@@ -7,4 +7,4 @@
  *
  * @type {angular.Module}
  */
-var leadbox = angular.module('leadboxmvc', []);
+var staffalotApp = angular.module('sirStaffalotApp', []);
