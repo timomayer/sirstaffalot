@@ -5,7 +5,7 @@ var dbTimeFormat = 'YYYY-MM-DD HH:mm:ss';
 var formTimeFormat = 'DD.MM.YYYY';
 
 exports.convertFormToDBTime = function (dateString) {
-    return moment(dateString, formTimeFormat).format(dbTimeFormat);
+	return moment(dateString, formTimeFormat).format(dbTimeFormat);
 }
 
 /**
@@ -16,14 +16,14 @@ exports.convertFormToDBTime = function (dateString) {
  */
 exports.convertCWStringToTimeJSON = function (cwString) {
 
-    var splitArray = cwString.split('_');
-    if (splitArray.length !== 2
-        || splitArray[0].length !== 4
-        || splitArray[1].length < 1
-        || splitArray[1].length > 2) {
-        throw new Error('Couldnt identify CWString...');
-    }
-    return {year: splitArray[0], cw: splitArray[1]};
+	var splitArray = cwString.split('_');
+	if (splitArray.length !== 2
+		|| splitArray[0].length !== 4
+		|| splitArray[1].length < 1
+		|| splitArray[1].length > 2) {
+		throw new Error('Couldnt identify CWString...');
+	}
+	return {year: splitArray[0], cw: splitArray[1]};
 }
 
 /**
@@ -32,9 +32,9 @@ exports.convertCWStringToTimeJSON = function (cwString) {
  * @param cw
  * @returns {string}
  */
-exports.convertYearAndCWToCWString = function(year, cw){
-    if(!year || typeof(year) !== 'string' || !cw || typeof(cw) !== 'string'){
-        throw new Error('Missing or wrong parameter...');
-    }
-    return year + '_' + cw;
+exports.convertYearAndCWToCWString = function (year, cw) {
+	if (!year || typeof(year) !== 'string' || !cw || typeof(cw) !== 'string') {
+		throw new Error('Missing or wrong parameter...');
+	}
+	return year + '_' + cw;
 }
