@@ -1,4 +1,3 @@
-
 /*global todomvc, angular */
 'use strict';
 
@@ -13,30 +12,47 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	$scope.cwRange.cwStart = '2013_44';
 	$scope.cwRange.cwEnd = '2014_01';
 
-	staffingStorage.getProjects().success(function(data, status, headers, config) {
+	staffingStorage.getProjects().success(function (data, status, headers, config) {
 		$scope.projectsData = mapResultsetToProjectAssignment(data);
 		console.log($scope.projectsData);
 	});
 
-	$scope.$watch('cwRange', function() {
-		staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function(data, status, headers, config) {
-			$scope.projectsData = mapResultsetToProjectAssignment(data);
+	$scope.$watch('cwRange', function () {
+		staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
+			$scope.projectsData = data;
 		});
 
-		resourcesStorage.getResources($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function(data, status, headers, config) {
-			$scope.resourcesData = mapResultsetToProjectAssignment(data);
+		resourcesStorage.getResources($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
+			$scope.resourcesData = data;
 		});
 	}, true);
 
-	$scope.changeDatepicker = function() {
+
+	$scope.changeDatepicker = function () {
 		$scope.cwRange.cwStart = $('.cwPick1').val();
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
+
 	};
+
+	function cwRangeArray(start, end) {
+		var jA = 0;
+		var returnV = 0;
+		startA = start.split('_');
+		endA = end.split('_');
+		if (parseInt(startA[0]) == parseInt(endA[0])) {
+			return parseInt(endA[1]) - parseInt(startA[1]);
+		} else if (parseInt(startA[0]) < parseInt(endA[0])) {
+			var diffY = parseInt(endA[0]) - parseInt(startA[0]) - 1;
+			var diffYx;
+		}
+	}
 
 	function mapResultsetToProjectAssignment(resultSet, cwRange) {
 		var resultJSON = {};
-		angular.forEach(resultSet, function(currentRow) {
-			var cwCoord = 'a_' + currentRow.year + '_' + currentRow.cw;
+
+		angular.forEach(resultSet, function (currentRow) {
+			var cwCoord = currentRow.year + '_' + currentRow.cw;
+
 			if (!resultJSON[currentRow.assignableId]) {
 				resultJSON[currentRow.assignableId] = {};
 				resultJSON[currentRow.assignableId].assignableName = currentRow.assignableName;
@@ -65,15 +81,47 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 			});
 		});
 
-		angular.forEach(resultJSON, function(project) {
-			angular.forEach(cwRange, function(cw) {
+		angular.forEach(resultJSON, function (project) {
+			angular.forEach(cwRange, function (cw) {
 				if (!project['cws'][cw]) {
 					project['cws'][cw] = [];
 				}
 			});
 		});
 
-		return resultJSON;
+	function recalculateCwSumsPerProject(projectData) {
+		angular.forEach(resultJSON[currentRow.assignableId]['cws'], function (crt, crtkey) {
+			resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = 0;
+			angular.forEach(crt, function (cr) {
+				resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = resultJSON[currentRow.assignableId]['cwsSum'][crtkey] + cr.days;
+			});
+		});
+	}
+
+	function turnFromAndToCwToRangeArray(fromCWString, toCWString) {
+		var fromCW = parseInt(fromCWString.split('_')[1]);
+		var fromYear = parseInt(fromCWString.split('_')[0]);
+		var toCW = parseInt(toCWString.split('_')[1]);
+		var toYear = parseInt(toCWString.split('_')[0]);
+
+		var resultArray = [];
+		while ((fromCW <= toCW && fromYear === toYear) || (fromYear < toYear)) {
+			resultArray.push(fromYear + '_' + fromCW);
+
+			if (fromCW === 52) {
+				if (moment('31.12.' + fromYear, 'DD.MM.YYYY').isoWeeks === 53) {
+					fromCW++;
+				}
+				else {
+					fromCW = 1;
+					fromYear++;
+				}
+			}
+			else {
+				fromCW++;
+			}
+		}
+		return resultArray;
 	}
 
 });
