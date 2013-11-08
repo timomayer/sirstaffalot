@@ -9,6 +9,7 @@
  */
 staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, staffingStorage) {
 
+<<<<<<< HEAD
 	$scope.cwRange = {};
 	$scope.cwRange.cwStart = 1;
 	$scope.cwRange.cwEnd = 2;
@@ -33,6 +34,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
  */
 staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, staffingStorage) {
 
+=======
+>>>>>>> 62be097d9b0f37cdd0a66e41eac9a37292850f31
     $scope.leads;
 
     $scope.newTodo = '';
