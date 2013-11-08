@@ -32,15 +32,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
 	};
 
-	function getCwRangeArray(start, end) {
-		var diff = end - start;
-		var returnArray = [];
-		for(i=0; i<=diff;i++) {
-			returnArray.push()
-		}
-		return;
-	}
-
 	function mapResultsetToProjectAssignment(resultSet, cwRange) {
 		var resultJSON = {};
 		angular.forEach(resultSet, function(currentRow) {
