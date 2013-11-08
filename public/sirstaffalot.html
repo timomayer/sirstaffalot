@@ -152,18 +152,7 @@
 								<tbody>
 									<tr ng-repeat-start="project in projectsData">
 										<th>{{project.assignableName}}</th>
-										<td>{{project.cws}}</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
+										<td ng-repeat="cw in project.cws">{{cw}}</td>
 										<td class="green">0</td>
 									</tr>
 									<tr class="subTableRow" ng-repeat-end>
