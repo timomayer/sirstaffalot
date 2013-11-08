@@ -26,4 +26,9 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 			$scope.resourcesData = data;
 		});
 	}, true);
+	
+	 $scope.changeDatepicker = function() {
+		$scope.cwRange.cwStart = $('.cwPick1').val();
+		$scope.cwRange.cwEnd = $('.cwPick2').val();
+	};
 });
