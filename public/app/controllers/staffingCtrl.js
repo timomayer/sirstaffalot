@@ -15,6 +15,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 	staffingStorage.getProjects().success(function(data, status, headers, config) {
 		$scope.projectsData = mapResultsetToProjectAssignment(data);
+		console.log($scope.projectsData);
 	});
 
 	$scope.$watch('cwRange', function() {
