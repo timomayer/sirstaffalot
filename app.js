@@ -34,23 +34,22 @@ app.post('/insert/assignable', basicData_route.insertAssignable);
 app.post('/insert/teamMember', basicData_route.insertTeamMember);
 
 
-
 // ******* ERROR HANDLING
 app.use(logErrors);
 app.use(clientErrorHandler);
 
 
 function logErrors(err, req, res, next) {
-    log.error(err.stack);
-    next(err);
+	log.error(err.stack);
+	next(err);
 }
 
 function clientErrorHandler(err, req, res, next) {
-    //@todo dont send stack trace in production
-    res.send(500, { error: err.stack });
+	//@todo dont send stack trace in production
+	res.send(500, { error: err.stack });
 }
 
 
 http.createServer(app).listen(app.get('port'), function () {
-    log.info('Express server listening on port ' + app.get('port'));
+	log.info('Express server listening on port ' + app.get('port'));
 });

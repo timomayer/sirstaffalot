@@ -6,8 +6,8 @@
  */
 staffalotApp.factory('staffingStorage', function($http) {
 	return {
-		get: function(filterState) {
-			return $http({method: 'GET', url: '_mock/getProjects.json', data: filterState });
+		getProjects: function(cwStart, cwEnd) {
+			return $http({method: 'GET', url: '_mock/getProjects.json?cwStart=' + cwStart + '&cwEnd=' + cwEnd });
 		}
 	};
 });

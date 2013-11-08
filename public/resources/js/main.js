@@ -16,4 +16,15 @@ $(document).ready(function() {
 			angular.element(this).controller('ngModel').$setViewValue($(this).val());
 		});
 	});
+	
+	$('.topTable > tbody > tr').click(function(){
+		if ($(this).hasClass('expanded')) {
+			$(this).removeClass('expanded').next('.subTableRow').hide();
+		} else {
+			$(this).addClass('expanded').next('.subTableRow').show();
+		}
+	});
+	$('.subTable > tbody > tr').click(function(e){
+		e.stopPropagation();
+	});
 });

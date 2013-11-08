@@ -3,7 +3,7 @@ var log = require('../utils/logger.js');
 
 
 sequelize.sync().success(function () {
-    log.info('Database Synced!');
+	log.info('Database Synced!');
 }).error(function (err) {
-        log.error(err);
-    });
+		log.error(err);
+	});

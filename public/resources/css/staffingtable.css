@@ -1,3 +1,9 @@
+.table {
+    width: 100%;
+    margin-bottom: 0;
+    border-top: none;
+}
+
 .table input{
 	width:20px;
 	text-align:center;
@@ -8,11 +14,6 @@
 	background:rgba(0,0,250,0.3);
 	
 	}
-.table {
-    width: 100%;
-    margin-bottom: 0;
-    border-top: none;
-}
 
 .table > thead > tr > th,
 .table > tbody > tr > th,
@@ -28,10 +29,6 @@
 
 .table > thead > tr > th {
     border-bottom: 1px solid black;
-}
-
-.table tr {
-    //background-color: rgba(0,0,250,0.3);
 }
 
 .table thead:first-child th {
@@ -76,6 +73,14 @@
     padding: 0;
 }
 
+.topTable > tbody > .subTableRow {
+	display: none;
+}
+
+.topTable > tbody > tr {
+	cursor: pointer;
+}
+
 .subTable {
     margin-top: 0;
 }
@@ -91,7 +96,7 @@
 
 .subTable td,
 .subTable th {
-    border-bottom-style: none;
+    border-bottom: none;
 }
 
 .inactive {

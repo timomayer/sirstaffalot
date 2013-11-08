@@ -1,8 +1,32 @@
 [
-    { "id":1, "name": "David", "email": "david@vi.com"},
-    { "id":2, "name": "Markus", "email": "markus@vi.com"},
-    { "id":3, "name": "Timo", "email": "timo@vi.com"},
-    { "id":4, "name": "Jan", "email": "jan@vi.com"},
-    { "id":5, "name": "Jonas", "email": "jonas@vi.com"},
-    { "id":6, "name": "Armin", "email": "armin@vi.com"}
+	{
+		"id": 1,
+		"name": "David",
+		"email": "david@vi.com"
+	},
+	{
+		"id": 2,
+		"name": "Markus",
+		"email": "markus@vi.com"
+	},
+	{
+		"id": 3,
+		"name": "Timo",
+		"email": "timo@vi.com"
+	},
+	{
+		"id": 4,
+		"name": "Jan",
+		"email": "jan@vi.com"
+	},
+	{
+		"id": 5,
+		"name": "Jonas",
+		"email": "jonas@vi.com"
+	},
+	{
+		"id": 6,
+		"name": "Armin",
+		"email": "armin@vi.com"
+	}
 ]

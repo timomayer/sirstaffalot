@@ -1,35 +1,35 @@
 {
-    "version": "v.0.Whiskey",
-    "development": {
-        "port": 3000,
-        "deliver_static": true,
-        "compress_static": true,
-        "use_express_errorHandler": true,
-        "user_sessions": false,
-        "loglevel" : "debug",
-        "mySQL": {
-            "host": "192.168.80.225",
-            "port": 3306,
-            "dbName" : "sirstaffalot",
-            "username": "sirstaffalot",
-            "password": "fat$sirstaff"
-        }
+	"version": "v.0.Whiskey",
+	"development": {
+		"port": 3000,
+		"deliver_static": true,
+		"compress_static": true,
+		"use_express_errorHandler": true,
+		"user_sessions": false,
+		"loglevel": "debug",
+		"mySQL": {
+			"host": "192.168.80.225",
+			"port": 3306,
+			"dbName": "sirstaffalot",
+			"username": "sirstaffalot",
+			"password": "fat$sirstaff"
+		}
 
 
-    },
-    "production": {
-        "port": 4711,
-        "deliver_static": false,
-        "compress_static": true,
-        "use_express_errorHandler": false,
-        "user_sessions": true,
-        "loglevel" : "warn",
-        "mySQL": {
-            "host": "0",
-            "port": 0,
-            "dbName" : "sirstaffelot",
-            "user": "sirstaffalot",
-            "password": "fat$sirstaff"
-        }
-    }
+	},
+	"production": {
+		"port": 4711,
+		"deliver_static": false,
+		"compress_static": true,
+		"use_express_errorHandler": false,
+		"user_sessions": true,
+		"loglevel": "warn",
+		"mySQL": {
+			"host": "0",
+			"port": 0,
+			"dbName": "sirstaffelot",
+			"user": "sirstaffalot",
+			"password": "fat$sirstaff"
+		}
+	}
 }

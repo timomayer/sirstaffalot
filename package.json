@@ -1,17 +1,17 @@
 {
-    "name": "SirStaffelot",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-        "express": "3.4.4",
-        "underscore": "*",
-        "winston": "*",
-        "mysql": "*",
-        "sequelize": "*",
-        "moment": "*",
-        "sprintf": "*"
-    }
+	"name": "SirStaffelot",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"express": "3.4.4",
+		"underscore": "*",
+		"winston": "*",
+		"mysql": "*",
+		"sequelize": "*",
+		"moment": "*",
+		"sprintf": "*"
+	}
 }

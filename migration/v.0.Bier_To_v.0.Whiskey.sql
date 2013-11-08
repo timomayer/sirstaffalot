@@ -1,1 +1,1 @@
-alter table assignment drop PRIMARY KEY, add primary key (cw, year, AssignableId, TeamMemberId);
+ALTER TABLE assignment DROP PRIMARY KEY, ADD PRIMARY KEY (cw, YEAR, AssignableId, TeamMemberId);
