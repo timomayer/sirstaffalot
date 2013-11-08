@@ -44,7 +44,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	function mapResultsetToProjectAssignment(resultSet) {
 		var resultJSON = {};
 		angular.forEach(resultSet, function(currentRow) {
-
 			var cwCoord = currentRow.year + '_' + currentRow.cw;
 			if (!resultJSON[currentRow.assignableId]) {
 				resultJSON[currentRow.assignableId] = {};
@@ -66,6 +65,14 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				days: currentRow.days
 			});
 			resultJSON[currentRow.assignableId]['cwsSum'] = {};
+		});
+
+		angular.forEach(resultJSON, function(project){
+			angular.forEach(cwRange, function(cw){
+				if(!project['cws'][cw]){
+					project['cws'][cw] = [];
+				}
+			});
 		});
 		return resultJSON;
 	}
