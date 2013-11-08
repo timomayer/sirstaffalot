@@ -4,11 +4,12 @@
 		"name": "Fancy SUV",
 		"fromEmail": "mareike@vi.com",
 		"fromBusinessUnit": "CC",
-		"days": 5,
+		"days": 15,
 		"startDate": "2013-09-09 00:00:00",
 		"endDate": "2013-10-09 00:00:00",
 		"description": "egestas nunc sed libero. Proin sed turpis nec mauris blandit mattis. Cras eget nisi dictum augue malesuada malesuada. Integer id magna et ipsum cursus vestibulum. Mauris magna. Duis dignissim tempor arcu. Vestibulum ut eros non enim commodo hendrerit.",
-		"timelineNumber": "4711-2"
+		"timelineNumber": "4711-2",
+		"lastMailDate" : "2013-11-07 00:00:00"
 	},
 	{
 		"id": 2,
@@ -67,18 +68,22 @@
 	},
 	{
 		"id": 7,
-		"name": "vacation"
+		"name": "Vacation",
+		"type": "vacation"
 	},
 	{
 		"id": 8,
-		"name": "public holiday"
+		"name": "Public Holiday",
+		"type": "public holiday"
 	},
 	{
 		"id": 9,
-		"name": "sick"
+		"name": "Sick",
+		"type": "sick"
 	},
 	{
 		"id": 10,
-		"name": "team orga"
+		"name": "Team Orga",
+		"type": "team orga"
 	}
 ]

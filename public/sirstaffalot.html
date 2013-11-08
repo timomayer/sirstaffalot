@@ -126,14 +126,17 @@
 							<h2>Projekte</h2>
 
 							<div class="input-daterange col-sm-2" style="float:right">
-								<input type="hidden" ng-change="changeDatepicker()" ng-model="cwRange.cwStart" class="form-control cwPick1" placeholder="01.01.2013" />
+								
+								<input class="form-control cwPick1" placeholder="01.01.2013" />
 								<span class="assign">to</span>
-								<input ng-change="changeDatepicker()" ng-model="cwRange.cwEnd" class="form-control cwPick2" placeholder="01.01.2013" />
+								<input class="form-control cwPick2" placeholder="01.01.2013" />
 							</div>
 							<div class="col-sm-2 phantomButtons">
-								<input type="text" class="form-control cwPick1Phantom" placeholder="1" />
+								<form>
+								<input ng-change="changeDatepicker()" type="text" class="form-control cwPick1Phantom" ng-model="cwRange.cwStart" placeholder="1" />
 								<span class="assign">to</span>
-								<input type="text" class="form-control cwPick2Phantom" placeholder="2" />
+								<input ng-change="changeDatepicker()" type="text" class="form-control cwPick2Phantom" ng-model="cwRange.cwEnd" placeholder="2" />
+								</form>
 							</div>
 							<table class="table topTable">
 								<thead>
@@ -157,18 +160,7 @@
 								<tbody>
 									<tr ng-repeat-start="project in projectsData">
 										<th>{{project.assignableName}}</th>
-										<td>{{project.cws}}</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
+										<td ng-repeat="cw in project.cms">{{cw}}</td>
 										<td class="green">0</td>
 									</tr>
 									<tr class="subTableRow" ng-repeat-end>
