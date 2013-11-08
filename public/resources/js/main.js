@@ -16,15 +16,16 @@ $(document).ready(function() {
 			angular.element(this).controller('ngModel').$setViewValue($(this).val());
 		});
 	});
-	
-	$('.topTable > tbody > tr').click(function(){
+
+	$(document).on('click', '.topTable > tbody > tr', function() {
+		alert(1);
 		if ($(this).hasClass('expanded')) {
 			$(this).removeClass('expanded').next('.subTableRow').hide();
 		} else {
 			$(this).addClass('expanded').next('.subTableRow').show();
 		}
 	});
-	$('.subTable > tbody > tr').click(function(e){
+	$(document).on('click', '.subTable > tbody > tr', function(e) {
 		e.stopPropagation();
 	});
 });
