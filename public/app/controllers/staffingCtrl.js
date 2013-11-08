@@ -39,9 +39,9 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		var returnV = 0;
 		startA = start.split('_');
 		endA = end.split('_');
-		if(parseInt(startA[0]) == parseInt(endA[0])) {
+		if (parseInt(startA[0]) == parseInt(endA[0])) {
 			return parseInt(endA[1]) - parseInt(startA[1]);
-		} else if(parseInt(startA[0]) < parseInt(endA[0])) {
+		} else if (parseInt(startA[0]) < parseInt(endA[0])) {
 			var diffY = parseInt(endA[0]) - parseInt(startA[0]) - 1;
 			var diffYx;
 		}
@@ -95,23 +95,26 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	}
 
 	function turnFromAndToCwToRangeArray(fromCWString, toCWString) {
-		var fromCW = fromCWString.split('_')[0];
-		var fromYear = fromCWString.split('_')[1];
-		var toCW = toCWString.split('_')[0];
-		var toYear = toCWString.split('_')[0];
+		var fromCW = parseInt(fromCWString.split('_')[1]);
+		var fromYear = parseInt(fromCWString.split('_')[0]);
+		var toCW = parseInt(toCWString.split('_')[1]);
+		var toYear = parseInt(toCWString.split('_')[0]);
 
 		var resultArray = [];
 		while ((fromCW <= toCW && fromYear === toYear) || (fromYear < toYear)) {
 			resultArray.push(fromYear + '_' + fromCW);
 
-			if(fromCW === 52){
-				if(moment('31.12.' + fromYear, 'DD.MM.YYYY').isoWeeks === 53){
+			if (fromCW === 52) {
+				if (moment('31.12.' + fromYear, 'DD.MM.YYYY').isoWeeks === 53) {
 					fromCW++;
 				}
 				else {
 					fromCW = 1;
 					fromYear++;
 				}
+			}
+			else {
+				fromCW++;
 			}
 		}
 		return resultArray;
