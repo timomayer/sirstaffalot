@@ -19,6 +19,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 	$scope.$watch('cwRange', function () {
 		staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
+			console.log( turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 			$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 		});
 
@@ -69,10 +70,10 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 			});
 		});
 
-		angular.forEach(resultJSON, function (project) {
+		angular.forEach(resultJSON, function (project, assignableId) {
 			angular.forEach(cwRange, function (cw) {
 				if (!project['cws'][cw]) {
-					project['cws'][cw] = [];
+					resultJSON[assignableId]['cws'][cw] = [];
 				}
 			});
 		});
@@ -89,6 +90,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	}
 
 	function turnFromAndToCwToRangeArray(fromCWString, toCWString) {
+		console.log('FromCW: ' + fromCWString);
+		console.log('ToCW: ' + toCWString);
 		var fromCW = parseInt(fromCWString.split('_')[1]);
 		var fromYear = parseInt(fromCWString.split('_')[0]);
 		var toCW = parseInt(toCWString.split('_')[1]);
@@ -96,8 +99,9 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 		var resultArray = [];
 		while ((fromCW <= toCW && fromYear === toYear) || (fromYear < toYear)) {
-			resultArray.push(fromYear + '_' + fromCW < 10 ? '0' + fromCW : fromCW);
-
+			var fromCWS = fromCW<10 ? '0' + fromCW : fromCW;
+			resultArray.push(fromYear + '_' + fromCWS);
+			                           console.log('CW is: ' , fromCWS);
 			if (fromCW === 52) {
 				if (moment('31.12.' + fromYear, 'DD.MM.YYYY').isoWeeks === 53) {
 					fromCW++;
