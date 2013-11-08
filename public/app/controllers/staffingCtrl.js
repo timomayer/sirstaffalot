@@ -12,14 +12,13 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	$scope.cwRange.cwStart = '2013_44';
 	$scope.cwRange.cwEnd = '2014_01';
 
-	staffingStorage.getProjects().success(function (data, status, headers, config) {
+	staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
 		$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 		console.log($scope.projectsData);
 	});
 
 	$scope.$watch('cwRange', function () {
 		staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
-			console.log( turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 			$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 		});
 
