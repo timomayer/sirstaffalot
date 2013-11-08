@@ -38,7 +38,7 @@ function mapResultsetToProjectAssignment(resultSet) {
  * @param resultSet
  * @returns {{}}
  */
-function mapResultsetToTeamMemberAssignment(resultSet) {
+function mapResultsetToTeamMemberAssignment(resultSet, cwRange) {
 	var resultJSON = {};
 
 	_.each(resultSet, function (currentRow) {
@@ -63,6 +63,15 @@ function mapResultsetToTeamMemberAssignment(resultSet) {
 			startDate: currentRow.startDate,
 			endDate: currentRow.endDate,
 			days: currentRow.days
+		});
+
+
+		angular.forEach(resultJSON, function(project){
+			angular.forEach(cwRange, function(cw){
+				if(!project['cws'][cw]){
+					project['cws'][cw] = [];
+				}
+			});
 		});
 	});
 	return resultJSON;
