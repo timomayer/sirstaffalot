@@ -6,20 +6,13 @@
  * - retrieves and persists the model via the todoStorage service
  * - exposes the model to the template and provides event handlers
  */
-staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, filterFilter) {
+staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, staffingStorage) {
 
-    $scope.leads;
-
-    $scope.newTodo = '';
-    $scope.editedTodo = null;
-    $scope.filter = {};
-    $scope.filter.cat = {};
-/*
-    leadStorage.get().success(function (data, status, headers, config) {
+    staffingStorage.get().success(function (data, status, headers, config) {
         $scope.leads = data;
     });
 
-
+/*
     $scope.$watch('filter', function () {
         var filterState = filterStateToJson($scope.filter);
 
