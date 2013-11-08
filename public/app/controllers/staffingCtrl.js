@@ -51,6 +51,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				resultJSON[currentRow.assignableId].assignableType = currentRow.assignableType;
 				resultJSON[currentRow.assignableId].startDate = currentRow.startDate;
 				resultJSON[currentRow.assignableId].endDate = currentRow.endDate;
+				resultJSON[currentRow.assignableId].assignableDays = currentRow.assignableDays;
 			}
 			if (!resultJSON[currentRow.assignableId]['cws']) {
 				resultJSON[currentRow.assignableId]['cws'] = {};
