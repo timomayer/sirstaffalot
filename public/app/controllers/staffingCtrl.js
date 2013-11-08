@@ -21,7 +21,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 		$scope.cwRangeArray = turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd);
 	});
-	
+	console.log($scope.projectsData.teamMemberDetail);
+
 	$scope.$watch('getTwValue', function() {
 		if($scope.getTwValue.days !== 999) {
 			console.log($projectsData);
@@ -35,7 +36,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 			.
 		error(function(data, status, headers, config) {
 			$('.tab-entryProject .alert-danger').toggleClass('hidden');
-	
+
 		});
 		}
 	}, true)
