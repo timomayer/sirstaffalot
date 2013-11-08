@@ -8,23 +8,22 @@ var assignmentsSQL = "select assignable.name assignableName, assignable.type ass
 	"inner join assignable on assignable.id = assignment.AssignableId " +
 	"inner join teammember on teammember.id = assignment.TeamMemberId" +
 	" where " +
-	"   assignment.year >= %s and assignment.cw >= %s" +
-	"   and " +
-	"   assignment.year <= %s and assignment.cw <= %s" +
+	"   (assignment.year = %(fromCW.year)s and assignment.cw >= %(fromCW.cw)s)" +
+	"   OR (assignment.year > %(fromCW.year)s AND assignment.year < %(toCW.year)s)" +
+	"   OR (assignment.year < %(toCW.year)s and assignment.cw <= %(toCW.cw)s)" +
 	"   order by assignable.name, assignable.id, assignment.cw, teammember.name, teammember.id;";
 
 module.exports = {
 
 	list: function (fromCW, toCW, callback) {
 
-//		var sql = sprintf(assignmentsSQL, fromCW.year, fromCW.cw, toCW.year, toCW.cw);
-//
-//		sequelize.query(sql, null, {raw: true}).success(function (resultSet) {
-//			callback(null, resultSet);
-//		}).error(function (err) {
-//				callback(err);
-//			});
-		callback(null, mock);
+		var sql = sprintf(assignmentsSQL, {fromCW: fromCW, toCW: toCW});
+
+		sequelize.query(sql, null, {raw: true}).success(function (resultSet) {
+			callback(null, resultSet);
+		}).error(function (err) {
+				callback(err);
+			});
 
 	},
 	insertAssignment: function (postBody, callback) {
