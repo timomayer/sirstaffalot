@@ -34,6 +34,27 @@
         "year": 2013,
         "days": 3
     },
+	{
+		"AssignableId": 2,
+		"TeamMemberId": 2,
+		"cw": 45,
+		"year": 2013,
+		"days": 2
+	},
+	{
+		"AssignableId": 2,
+		"TeamMemberId": 2,
+		"cw": 46,
+		"year": 2013,
+		"days": 1.75
+	},
+	{
+		"AssignableId": 2,
+		"TeamMemberId": 3,
+		"cw": 45,
+		"year": 2013,
+		"days": 1
+	},
     {
         "AssignableId": 1,
         "TeamMemberId": 2,
