@@ -32,20 +32,16 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
 	};
 
-<<<<<<< HEAD
 	function getCwRangeArray(start, end) {
 		var diff = end - start;
 		var returnArray = [];
 		for(i=0; i<=diff;i++) {
 			returnArray.push()
 		}
-		return
+		return;
 	}
 
-	function mapResultsetToProjectAssignment(resultSet) {
-=======
 	function mapResultsetToProjectAssignment(resultSet, cwRange) {
->>>>>>> 0a494682059dd59dc6ff4338de0632cc1ff66e2c
 		var resultJSON = {};
 		angular.forEach(resultSet, function(currentRow) {
 			var cwCoord = currentRow.year + '_' + currentRow.cw;
