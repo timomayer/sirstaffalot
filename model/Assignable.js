@@ -5,6 +5,7 @@ module.exports = function (sequelize, DataTypes) {
 		name: { type: DataTypes.STRING, allowNull: false },
 		type: { type: DataTypes.STRING, allowNull: false, defaultValue: 'project' }, // ['project', 'public holiday', 'vacation', 'not available', 'sick', ...]
 		fromEmail: { type: DataTypes.STRING, validate: { isEmail: true}},
+		lastMailDate: {type: DataTypes.DATE },
 		fromBusinessUnit: { type: DataTypes.STRING },
 		days: { type: DataTypes.FLOAT },
 		startDate: { type: DataTypes.DATE },
