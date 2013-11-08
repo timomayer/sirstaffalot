@@ -143,9 +143,9 @@
 										<th class="remainingTW">Gesamt</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										<th>Langer Projektname: Lorem to the ipsum</th>
+								<tbody> 
+									<tr ng-repeat="project in projectsData">
+										<th>{{project.assignableName}}</th>
 										<td>0</td>
 										<td>0</td>
 										<td>0</td>
@@ -215,54 +215,6 @@
 												</tbody>
 											</table>
 										</td>
-									</tr>
-									<tr>
-										<th>Projektname</th>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td class="red">-8</td>
-									</tr>
-									<tr>
-										<th>Projektname</th>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td class="inactive">0</td>
-										<td class="green">0</td>
-									</tr>
-									<tr>
-										<th>Projektname</th>
-										<td class="inactive">0</td>
-										<td class="inactive">0</td>
-										<td class="inactive">0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td>0</td>
-										<td class="inactive">0</td>
-										<td class="inactive">0</td>
-										<td class="red">-8</td>
 									</tr>
 								</tbody>
 							</table>

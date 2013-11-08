@@ -1,9 +1,10 @@
 var _ = require('underscore');
 var log = require('../utils/logger.js');
 var sequelize = require('../model/model.js').sequelize;
+var Assignment = require('../model/model.js')['Assignment'];
 var sprintf = require('sprintf').sprintf;
 
-var assignmentsSQL = "select assignable.name assignableName, assignable.type assignableType, assignable.id assignableId, assignment.cw, teammember.id teamMemberId, teammember.type teamMemberType, assignment.days, assignment.year, teammember.name teamMemberName, assignable.days assignableDays from assignment " +
+var assignmentsSQL = "select assignable.name assignableName, assignable.type assignableType, assignable.startDate, assignable.endDate, assignable.id assignableId, assignment.cw, teammember.id teamMemberId, teammember.type teamMemberType, assignment.days, assignment.year, teammember.name teamMemberName, assignable.days assignableDays from assignment " +
 	"inner join assignable on assignable.id = assignment.AssignableId " +
 	"inner join teammember on teammember.id = assignment.TeamMemberId" +
 	" where " +
@@ -21,9 +22,24 @@ module.exports = {
 		sequelize.query(sql, null, {raw: true}).success(function (resultSet) {
 			callback(null, resultSet);
 		}).error(function (err) {
-			callback(err);
-		});
+				callback(err);
+			});
+	},
+	insertAssignment: function (postBody, callback) {
+
+		var newAssignment = Assignment.build(postBody);
+		newAssignment.save()
+			.success(function (result) {
+				callback(null, result);
+			})
+			.error(function (err) {
+				callback(err);
+			});
+
+
 	}
 
 };
+
+
 

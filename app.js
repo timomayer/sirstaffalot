@@ -28,7 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ****** ASSIGNMENT FUNCTION
 app.get('/list/assignments', assignmentRoute.listAssignments);
 
+
 // ****** INSERT FUNCTIONS
+app.post('/insert/assignment', assignmentRoute.insertAssignment);
 app.post('/insert/assignable', basicDataRoute.insertAssignable);
 app.post('/insert/teamMember', basicDataRoute.insertTeamMember);
 
