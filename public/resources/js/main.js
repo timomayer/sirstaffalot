@@ -19,7 +19,6 @@ $(document).ready(function() {
 	});
 
 	$(document).on('click', '.topTable > tbody > tr', function() {
-		alert(1);
 		if ($(this).hasClass('expanded')) {
 			$(this).removeClass('expanded').next('.subTableRow').hide();
 		} else {
@@ -29,7 +28,7 @@ $(document).ready(function() {
 	$(document).on('click', '.subTable > tbody > tr', function(e) {
 		e.stopPropagation();
 	});
-	
+
 	function changeToKw() {
 		var cwPickD1 = $('.cwPick1').val();
 		var cwPickD2 = $('.cwPick2').val();
@@ -46,7 +45,7 @@ $(document).ready(function() {
 		$('.cwPick1').datepicker('show');
 		$('.datepicker-orient-top').offset({ top: offset.top+height+25, left: offset.left})
 	});
-	
+
 	$('.cwPick2Phantom').click(function() {
 		var offset = $(this).offset();
 		var height = $(this).height();
