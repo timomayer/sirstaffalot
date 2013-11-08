@@ -11,20 +11,24 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	$scope.cwRange = {};
 	$scope.cwRange.cwStart = '2013_44';
 	$scope.cwRange.cwEnd = '2014_01';
+	$scope.cwRangeArray = [];
 
 	staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
 		$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
-		console.log($scope.projectsData);
+		$scope.cwRangeArray = turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd);
 	});
 
 	$scope.$watch('cwRange', function () {
+
 		staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
 			$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
+			$scope.cwRangeArray = turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd);
 		});
-
+/*
 		resourcesStorage.getResources($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
 			$scope.resourcesData = data;
 		});
+*/
 	}, true);
 
 
@@ -61,7 +65,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				days: currentRow.days
 			});
 		});
-
 		angular.forEach(resultJSON, function (project, assignableId) {
 			resultJSON[assignableId]['cwsSum'] = {};
 			angular.forEach(cwRange, function (cwCoord) {
@@ -72,6 +75,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				else {
 					resultJSON[assignableId]['cwsSum'][cwCoord] = 0;
 					angular.forEach(resultJSON[assignableId]['cws'][cwCoord], function (teamMember) {
+						if()
 						resultJSON[assignableId]['cwsSum'][cwCoord] += teamMember.days;
 					})
 				}
