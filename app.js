@@ -13,8 +13,8 @@ var app = express();
 //var models = require('./model/model.js');
 
 var log = require('./utils/logger.js');
-var basicData_route = require('./routes/basicdata_route');
-var assignment_route = require('./routes/assignment_route');
+var basicDataRoute = require('./routes/BasicdataRoute');
+var assignmentRoute = require('./routes/AssignmentRoute');
 
 
 // ******* EXPRESS MODULES
@@ -26,12 +26,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // ****** ASSIGNMENT FUNCTION
-app.get('/assignment/assignable', assignment_route.assignableAssignments);
-app.get('/assignment/teamMember', assignment_route.teamMemberrAssignments);
+app.get('/list/assignments', assignmentRoute.listAssignments);
 
 // ****** INSERT FUNCTIONS
-app.post('/insert/assignable', basicData_route.insertAssignable);
-app.post('/insert/teamMember', basicData_route.insertTeamMember);
+app.post('/insert/assignable', basicDataRoute.insertAssignable);
+app.post('/insert/teamMember', basicDataRoute.insertTeamMember);
 
 
 // ******* ERROR HANDLING

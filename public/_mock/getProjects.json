@@ -1,74 +1,45 @@
-[
-	{
-		"id": 54005,
-		"name": "Projekt 1",
-		"pm": "Sven Mones",
-		"wd": 45,
-		"cwStart": 2,
-		"cwEnd": 5,
-		"cws": [
+{
+	"projectId": {
+		"asignebaleName": "fancySUV",
+		"cws":
 			{
-				"cw": "2014_02",
-				"staff": [
-					{
-						"id": 1,
-						"wd": 3
-					},
-					{
-						"id": 2,
-						"wd": 2.5
-					}
-				]
+			"2014_KW1": [
+				{
+				"teamMemberId": "1231230",
+				"userName": "David",
+				"days": 5
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
+				}
+			],
+			"2014_KW1": [
+				{
+				"teamMemberId": "1231230",
+				"userName": "David",
+				"days": 5
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
+				}
+			]
 			},
-			{
-				"cw": "2014_03",
-				"staff": [
-					{
-						"id": 4,
-						"wd": 0.5
-					},
-					{
-						"id": 2,
-						"wd": 2
-					}
-				]
-			}
-		]
+
 	},
-	{
-		"id": 54005,
-		"name": "Projekt 2",
-		"pm": "Sven Mones 2",
-		"wd": 24,
-		"cwStart": 3,
-		"cwEnd": 7,
-		"cws": [
-			{
-				"cw": "2014_03",
-				"staff": [
-					{
-						"id": 1,
-						"wd": 3
-					},
-					{
-						"id": 2,
-						"wd": 2.5
-					}
-				]
-			},
-			{
-				"cw": "2014_05",
-				"staff": [
-					{
-						"id": 4,
-						"wd": 0.5
-					},
-					{
-						"id": 2,
-						"wd": 2
-					}
-				]
-			}
-		]
+	"Leadböxle": {
 	}
-]
+}
