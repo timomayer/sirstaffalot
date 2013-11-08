@@ -60,22 +60,24 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				teamMemberType: currentRow.teamMemberType,
 				days: currentRow.days
 			});
-			resultJSON[currentRow.assignableId]['cwsSum'] = {};
-			angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt, crtkey) {
-				resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = 0;
-				angular.forEach(crt, function(cr) {
-					resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = resultJSON[currentRow.assignableId]['cwsSum'][crtkey] + cr.days;
-				});
-			});
 		});
 
 		angular.forEach(resultJSON, function (project, assignableId) {
-			angular.forEach(cwRange, function (cw) {
-				if (!project['cws'][cw]) {
-					resultJSON[assignableId]['cws'][cw] = [];
+			resultJSON[assignableId]['cwsSum'] = {};
+			angular.forEach(cwRange, function (cwCoord) {
+				if (!project['cws'][cwCoord]) {
+					resultJSON[assignableId]['cws'][cwCoord] = [];
+					resultJSON[assignableId]['cwsSum'][cwCoord] = 0;
+				}
+				else {
+					resultJSON[assignableId]['cwsSum'][cwCoord] = 0;
+					angular.forEach(resultJSON[assignableId]['cws'][cwCoord], function (teamMember) {
+						resultJSON[assignableId]['cwsSum'][cwCoord] += teamMember.days;
+					})
 				}
 			});
 		});
+		console.log("ResultJson is: ", resultJSON);
 		return resultJSON;
 	}
 
@@ -89,8 +91,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	}
 
 	function turnFromAndToCwToRangeArray(fromCWString, toCWString) {
-		console.log('FromCW: ' + fromCWString);
-		console.log('ToCW: ' + toCWString);
 		var fromCW = parseInt(fromCWString.split('_')[1]);
 		var fromYear = parseInt(fromCWString.split('_')[0]);
 		var toCW = parseInt(toCWString.split('_')[1]);
@@ -98,9 +98,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 		var resultArray = [];
 		while ((fromCW <= toCW && fromYear === toYear) || (fromYear < toYear)) {
-			var fromCWS = fromCW<10 ? '0' + fromCW : fromCW;
+			var fromCWS = fromCW < 10 ? '0' + fromCW : fromCW;
 			resultArray.push(fromYear + '_' + fromCWS);
-			                           console.log('CW is: ' , fromCWS);
 			if (fromCW === 52) {
 				if (moment('31.12.' + fromYear, 'DD.MM.YYYY').isoWeeks === 53) {
 					fromCW++;
