@@ -20,5 +20,6 @@ exports.insertAssignable = function (req, res, next) {
 
 
 exports.insertTeamMember = function (req, res, next) {
-	BasicDataService.insertTeamMember();
+	//BasicDataService.insertTeamMember();
+	next(new Error("Not implemented yet"));
 }
