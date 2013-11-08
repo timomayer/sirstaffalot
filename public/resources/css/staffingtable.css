@@ -100,7 +100,7 @@
     border-bottom: none;
 }
 
-.inactive {
+.grey {
     color: #999;
     font-size: 0;
     background-color: rgb(200,200,200);
