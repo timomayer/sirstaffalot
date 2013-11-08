@@ -54,6 +54,138 @@
 			<div class="main-wrapper clearfix">
 				<div class="tab-dashboard" ng-controller="dashboardCtrl" ng-class="{true:'visible', false:''}[pageTabs[0].active]">
 					<a href="javascript:void(0);" ng-click="pageTabSelect(2);">Staffing</a>
+					<div class="row">
+<div class="detailWidget">
+							<h1>Fat Fred</h1>
+							<div>
+
+								<div class="detailDatepicker">
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<span class="assign">to</span>
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<p class="DetailGreen">70%</p>
+								</div>
+
+								<div class="detailList">
+									<ul>
+										<li><a href="">Armin</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>Leadbox: 0TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">David</a>
+											<div class="progress">
+												<span style="width: 85%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Jonas</a>
+											<div class="progress">
+												<span style="width: 63%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Markus</a>
+											<div class="progress">
+												<span style="width: 23%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Timo</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="detailFooter">
+									<p class="detailGreen">Free Space: 4TW</p>
+								</div>
+							</div>
+						</div>
+						<div class="detailWidget">
+							<h1>David</h1>
+							<div>
+
+								<div class="detailDatepicker">
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<span class="assign">to</span>
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<p class="DetailYellow">85%</p>
+								</div>
+
+								<div class="detailList">
+									<ul>
+										<li><a href="">Leadbox</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 1TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Teamorga</a>
+											<div class="progress">
+												<span style="width: 85%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 2TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Urlaub</a>
+											<div class="progress">
+												<span style="width: 63%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 1TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+								<div class="detailFooter">
+									<p class="detailYellow">Free Space: 1TW</p>
+								</div>
+							</div>
+
+
+
+						</div>
+					</div>
 				</div>
 				<div class="tab-entryProject" ng-controller="staffingPostCtrl" ng-class="{true:'visible', false:''}[pageTabs[1].active]">
 					<div class="alert alert-success hidden">
@@ -126,7 +258,7 @@
 							<h2>Projekte</h2>
 
 							<div class="input-daterange col-sm-2" style="float:right">
-								
+
 								<input class="form-control cwPick1" placeholder="01.01.2013" />
 								<span class="assign">to</span>
 								<input class="form-control cwPick2" placeholder="01.01.2013" />
@@ -142,24 +274,13 @@
 								<thead>
 									<tr>
 										<th></th>
-										<th>01</th>
-										<th>02</th>
-										<th>03</th>
-										<th>04</th>
-										<th>05</th>
-										<th>06</th>
-										<th>07</th>
-										<th>08</th>
-										<th>09</th>
-										<th>10</th>
-										<th>11</th>
-										<th>12</th>
-										<th class="remainingTW">Gesamt</th>
+										<th ng-repeat="cw in cwRangeArray">{{cw}}</th>
+										<th class="remainingTW"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr ng-repeat-start="project in projectsData">
-										<th>{{project.assignableName}}</th>
+										<th>{{project.assignableName}} <span class="small">({{project.assignableDays}}TW)</span></th>
 										<td ng-repeat="cw in project.cwsSum">{{cw}}</td>
 										<td class="green">0</td>
 									</tr>
@@ -169,7 +290,7 @@
 												<tbody>
 													<tr>
 														<th>Timo</th>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
+														<td><input ng-model="$parent.getTwValue.days" type="text" name="" maxlength="4" value="0"></td>
 														<td><input type="text" name="" maxlength="4" value="0"></td>
 														<td><input type="text" name="" maxlength="4" value="0"></td>
 														<td><input type="text" name="" maxlength="4" value="0"></td>
