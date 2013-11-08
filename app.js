@@ -30,7 +30,7 @@ app.get('/list/assignments', assignmentRoute.listAssignments);
 
 
 // ****** INSERT FUNCTIONS
-app.post('/insert/assignment', assignmentRoute.insertAssignment);
+app.post('/save/assignment', assignmentRoute.saveAssignment);
 app.post('/insert/assignable', basicDataRoute.insertAssignable);
 app.post('/insert/teamMember', basicDataRoute.insertTeamMember);
 
