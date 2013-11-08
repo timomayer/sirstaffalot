@@ -33,10 +33,23 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
 	};
 
+	function cwRangeArray(start, end) {
+		var jA = 0;
+		var returnV = 0;
+		startA = start.split('_');
+		endA = end.split('_');
+		if(parseInt(startA[0]) == parseInt(endA[0])) {
+			return parseInt(endA[1]) - parseInt(startA[1]);
+		} else if(parseInt(startA[0]) < parseInt(endA[0])) {
+			var diffY = parseInt(endA[0]) - parseInt(startA[0]) - 1;
+			var diffYx;
+		}
+	}
+
 	function mapResultsetToProjectAssignment(resultSet, cwRange) {
 		var resultJSON = {};
 		angular.forEach(resultSet, function(currentRow) {
-			var cwCoord = currentRow.year + '_' + currentRow.cw;
+			var cwCoord = 'a_' + currentRow.year + '_' + currentRow.cw;
 			if (!resultJSON[currentRow.assignableId]) {
 				resultJSON[currentRow.assignableId] = {};
 				resultJSON[currentRow.assignableId].assignableName = currentRow.assignableName;
