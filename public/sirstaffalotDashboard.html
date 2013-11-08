@@ -53,7 +53,7 @@
 
 			<div class="main-wrapper clearfix">
 				<div class="tab-dashboard" ng-controller="dashboardCtrl" ng-class="{true:'visible', false:''}[pageTabs[0].active]">
-
+					
 				</div>
 				<div class="tab-entryProject" ng-controller="staffingPostCtrl" ng-class="{true:'visible', false:''}[pageTabs[1].active]">
 
@@ -117,9 +117,138 @@
 
 				<div class="tab-dashing" ng-controller="staffingCtrl" ng-class="{true:'visible', false:''}[pageTabs[2].active]">
 					<div class="row">
-						
-					</div>
+						<div class="detailWidget">
+							<h1>Fat Fred</h1>
+							<div>
+								
+								<div class="detailDatepicker">
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<span class="assign">to</span>
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<p class="DetailGreen">70%</p>
+								</div>
+								
+								<div class="detailList">
+									<ul>
+										<li><a href="">Armin</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>Leadbox: 0TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">David</a>
+											<div class="progress">
+												<span style="width: 85%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Jonas</a>
+											<div class="progress">
+												<span style="width: 63%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Markus</a>
+											<div class="progress">
+												<span style="width: 23%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Timo</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="detailFooter">
+									<input type="button" name="" value="Tasks"><p class="detailGreen">Free Space: 4TW</p>
+								</div>
+							</div>
+						</div>
+						<div class="detailWidget">
+							<h1>David</h1>
+							<div>
+								
+								<div class="detailDatepicker">
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<span class="assign">to</span>
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<p class="DetailYellow">85%</p>
+								</div>
+								
+								<div class="detailList">
+									<ul>
+										<li><a href="">Leadbox</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 1TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Teamorga</a>
+											<div class="progress">
+												<span style="width: 85%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 2TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Urlaub</a>
+											<div class="progress">
+												<span style="width: 63%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 1TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										
+									</ul>
+								</div>
+								<div class="detailFooter">
+									<input type="button" name="" value="Tasks"><p class="detailYellow">Free Space: 1TW</p>
+								</div>
+							</div>
+							
 
+
+						</div>
+					</div>
+						
 				</div>
 
 				<footer id="footer" role="contentinfo">
