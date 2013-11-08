@@ -29,8 +29,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	}, true);
 
 	$scope.changeDatepicker = function() {
-		$scope.cwRange.cwStart = $('.cwPick1').val();
-		$scope.cwRange.cwEnd = $('.cwPick2').val();
+		$scope.cwRange.cwStart = $('.cwPick1Phantom').val();
+		$scope.cwRange.cwEnd = $('.cwPick2Phantom').val();
 	};
 
 	function cwRangeArray(start, end) {

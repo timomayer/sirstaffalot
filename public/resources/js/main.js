@@ -14,9 +14,13 @@ $(document).ready(function() {
 	}).on('changeDate', function() {
 		$('input[ng-model], select[ng-model]').each(function() {
 			$(this).trigger('input');
+			$('.cwPick1Phantom').trigger('input');
+			$('.cwPick2Phantom').trigger('input');
 			angular.element(this).controller('ngModel').$setViewValue($(this).val());
-		});
+			angular.element($('.cwPick1Phantom')).controller('ngModel').$setViewValue($('.cwPick1Phantom').val());
 
+			angular.element($('.cwPick2Phantom')).controller('ngModel').$setViewValue($('.cwPick2Phantom').val());
+		});
 		changeToKw();
 	});
 
@@ -34,8 +38,8 @@ $(document).ready(function() {
 	function changeToKw() {
 		var cwPickD1 = $('.cwPick1').val();
 		var cwPickD2 = $('.cwPick2').val();
-		var cwPickW1 = moment(cwPickD1, 'DD.MM.YYYY').week();
-		var cwPickW2 = moment(cwPickD2, 'DD.MM.YYYY').week();
+		var cwPickW1 = moment(cwPickD1, 'DD.MM.YYYY').format('YYYY_W');
+		var cwPickW2 = moment(cwPickD2, 'DD.MM.YYYY').format('YYYY_W');
 		$('.cwPick1Phantom').val(cwPickW1);
 		$('.cwPick2Phantom').val(cwPickW2);
 
