@@ -14,10 +14,13 @@ module.exports = {
 			postBody.endDate = timeConverter.convertFormToDBTime(postBody.endDate);
 		}
 
-		var newAssignable = Assignable.build(postBody).error(function (err) {
-			log.error('Validation-Error');
+		var newAssignable;
+		try {
+			newAssignable = Assignable.build(postBody)
+		} catch (err) {
+			log.error('Validation-Error '+err.stack);
 			callback(err);
-		});
+		}
 
 		newAssignable.save()
 			.success(function (result) {
