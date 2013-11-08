@@ -7,8 +7,8 @@
 staffalotApp.factory('staffingStorage', function($http) {
 	return {
 		getProjects: function(cwStart, cwEnd) {
-			cwStart = '2013_33';
-			cwEnd = '2013_44';
+			cwStart = '2013_31';
+			cwEnd = '2013_47';
 			return $http({method: 'GET', url: '/list/assignments?fromCW=' + cwStart + '&toCW=' + cwEnd });
 		}
 	};
