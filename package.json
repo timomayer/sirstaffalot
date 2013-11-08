@@ -12,6 +12,7 @@
 		"mysql": "*",
 		"sequelize": "*",
 		"moment": "*",
-		"sprintf": "*"
+		"sprintf": "*",
+		"nodemailer": "*"
 	}
 }
