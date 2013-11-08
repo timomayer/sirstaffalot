@@ -1,4 +1,13 @@
-
+.table input{
+	width:20px;
+	text-align:center;
+	border:none;
+	
+	}
+.table input:focus{
+	background:rgba(0,0,250,0.3);
+	
+	}
 .table {
     width: 100%;
     margin-bottom: 0;
@@ -91,13 +100,13 @@
     background-color: rgb(200,200,200);
 }
 
-.fullyAvailable{
+.green{
 	background-color: rgba(100,220,100,1);
 }
-.notAvailable{
+.red{
 	background-color: rgba(255,80,100,1);
 }
-.limitedAvailable{
+.yellow{
 	background-color: rgba(255,255,100,1);
 }
 
