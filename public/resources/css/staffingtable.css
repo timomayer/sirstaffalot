@@ -4,14 +4,16 @@
     border-top: none;
 }
 
-.table input{
+.table input {
 	width:20px;
 	text-align:center;
+	background: transparent;
 	border:none;
-	
 	}
-.table input:focus{
-	background:rgba(0,0,250,0.3);
+	
+.table input:focus {
+	background:rgba(120,120,120,0.5);
+	border: 1px solid #ccc;
 	
 	}
 
