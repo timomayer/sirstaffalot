@@ -8,7 +8,6 @@
  */
 staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, staffingStorage) {
 
-<<<<<<< HEAD
     $scope.leads;
 
     $scope.newTodo = '';
@@ -22,9 +21,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	
 /*
     leadStorage.get().success(function (data, status, headers, config) {
-=======
+
     staffingStorage.get().success(function (data, status, headers, config) {
->>>>>>> c1e08cb64fe82353b58f02b127da7f37418c8210
         $scope.leads = data;
     });
 
