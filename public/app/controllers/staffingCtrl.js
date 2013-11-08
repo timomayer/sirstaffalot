@@ -38,10 +38,12 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		angular.forEach(resultSet, function(currentRow) {
 
 			var cwCoord = currentRow.year + '_' + currentRow.cw;
-
 			if (!resultJSON[currentRow.assignableId]) {
 				resultJSON[currentRow.assignableId] = {};
 				resultJSON[currentRow.assignableId].assignableName = currentRow.assignableName;
+				resultJSON[currentRow.assignableId].assignableType = currentRow.assignableType;
+				resultJSON[currentRow.assignableId].startDate = currentRow.startDate;
+				resultJSON[currentRow.assignableId].endDate = currentRow.endDate;
 			}
 			if (!resultJSON[currentRow.assignableId]['cws']) {
 				resultJSON[currentRow.assignableId]['cws'] = {};
@@ -52,9 +54,14 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 			resultJSON[currentRow.assignableId]['cws'][cwCoord].push({
 				teamMemberId: currentRow.teamMemberId,
 				teamMemberName: currentRow.teamMemberName,
-				days: currentRow.days});
-
-
+				teamMemberType: currentRow.teamMemberType,
+				days: currentRow.days
+			});
+			resultJSON[currentRow.assignableId]['cwsSum'] = 0;
+			angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt) {
+				resultJSON[currentRow.assignableId]['cwsSum'] = resultJSON[currentRow.assignableId]['cwsSum'] + crt[0].days;
+			});
+			console.log(resultJSON[currentRow.assignableId]['cwsSum']);
 		});
 		return resultJSON;
 	}
