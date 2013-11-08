@@ -1,32 +1,44 @@
 {
 	"projectId": {
 		"asignebaleName": "fancySUV",
-		"cws": [
+		"cws":
 			{
-				"2014_KW1": {
-					"1231230": {
-						"userName": "David",
-						"days": 5
-					},
-					"1231239": {
-						"userName": "Timo",
-						"days": 3
-					},
-					"1231231": {
-						"userName": "Markus",
-						"days": 2
-					}
+			"2014_KW1": [
+				{
+				"teamMemberId": "1231230",
+				"userName": "David",
+				"days": 5
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
 				}
+			],
+			"2014_KW1": [
+				{
+				"teamMemberId": "1231230",
+				"userName": "David",
+				"days": 5
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
+				},
+				{
+					"teamMemberId": "1231239",
+					"userName": "Timo",
+					"days": 3
+				}
+			]
 			},
-			{
-				"2014_KW2": {
-					"1231230": {
-						"userName": "David",
-						"days": 5
-					}
-				}
-			}
-		]
+
 	},
 	"Leadböxle": {
 	}
