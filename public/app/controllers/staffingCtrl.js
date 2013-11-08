@@ -20,11 +20,11 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 	$scope.$watch('cwRange', function() {
 		staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function(data, status, headers, config) {
-			$scope.projectsData = data;
+			$scope.projectsData = mapResultsetToProjectAssignment(data);
 		});
 
 		resourcesStorage.getResources($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function(data, status, headers, config) {
-			$scope.resourcesData = data;
+			$scope.resourcesData = mapResultsetToProjectAssignment(data);
 		});
 	}, true);
 
@@ -32,19 +32,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		$scope.cwRange.cwStart = $('.cwPick1').val();
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
 	};
-
-	function cwRangeArray(start, end) {
-		var jA = 0;
-		var returnV = 0;
-		startA = start.split('_');
-		endA = end.split('_');
-		if(parseInt(startA[0]) == parseInt(endA[0])) {
-			return parseInt(endA[1]) - parseInt(startA[1]);
-		} else if(parseInt(startA[0]) < parseInt(endA[0])) {
-			var diffY = parseInt(endA[0]) - parseInt(startA[0]) - 1;
-			var diffYx;
-		}
-	}
 
 	function mapResultsetToProjectAssignment(resultSet, cwRange) {
 		var resultJSON = {};
@@ -70,25 +57,23 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				days: currentRow.days
 			});
 			resultJSON[currentRow.assignableId]['cwsSum'] = {};
+			angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt, crtkey) {
+				resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = 0;
+				angular.forEach(crt, function(cr) {
+					resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = resultJSON[currentRow.assignableId]['cwsSum'][crtkey] + cr.days;
+				});
+			});
 		});
 
-		angular.forEach(resultJSON, function(project){
-			angular.forEach(cwRange, function(cw){
-				if(!project['cws'][cw]){
+		angular.forEach(resultJSON, function(project) {
+			angular.forEach(cwRange, function(cw) {
+				if (!project['cws'][cw]) {
 					project['cws'][cw] = [];
 				}
 			});
 		});
-		return resultJSON;
-	}
 
-	function recalculateCwSumsPerProject(projectData) {
-		angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt, crtkey) {
-			resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = 0;
-			angular.forEach(crt, function(cr) {
-				resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = resultJSON[currentRow.assignableId]['cwsSum'][crtkey] + cr.days;
-			});
-		});
+		return resultJSON;
 	}
 
 });
