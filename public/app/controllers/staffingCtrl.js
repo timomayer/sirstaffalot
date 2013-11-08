@@ -15,7 +15,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 	staffingStorage.getProjects().success(function(data, status, headers, config) {
 		$scope.projectsData = mapResultsetToProjectAssignment(data);
-		console.log($scope.projectsData);
 	});
 
 	$scope.$watch('cwRange', function() {
@@ -58,16 +57,17 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				days: currentRow.days
 			});
 			resultJSON[currentRow.assignableId]['cwsSum'] = {};
-			angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt, crtkey) {
-				resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = 0;
-				angular.forEach(crt, function(cr) {
-					console.log(crtkey);
-					resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = resultJSON[currentRow.assignableId]['cwsSum'][crtkey] + cr.days;
-				});
-			});
-			//console.log(resultJSON[currentRow.assignableId]['cwsSum']);
 		});
 		return resultJSON;
+	}
+
+	function recalculateCwSumsPerProject(projectData) {
+		angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt, crtkey) {
+			resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = 0;
+			angular.forEach(crt, function(cr) {
+				resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = resultJSON[currentRow.assignableId]['cwsSum'][crtkey] + cr.days;
+			});
+		});
 	}
 
 });
