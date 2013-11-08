@@ -13,13 +13,13 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	$scope.cwRange.cwEnd = '2014_01';
 
 	staffingStorage.getProjects().success(function (data, status, headers, config) {
-		$scope.projectsData = mapResultsetToProjectAssignment(data);
+		$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 		console.log($scope.projectsData);
 	});
 
 	$scope.$watch('cwRange', function () {
 		staffingStorage.getProjects($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
-			$scope.projectsData = data;
+			$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 		});
 
 		resourcesStorage.getResources($scope.cwRange.cwStart, $scope.cwRange.cwEnd).success(function (data, status, headers, config) {
@@ -88,6 +88,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				}
 			});
 		});
+		return resultJSON;
+	}
 
 	function recalculateCwSumsPerProject(projectData) {
 		angular.forEach(resultJSON[currentRow.assignableId]['cws'], function (crt, crtkey) {
