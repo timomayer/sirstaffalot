@@ -144,7 +144,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr ng-repeat="project in projectsData">
+									<tr ng-repeat-start="project in projectsData">
 										<th>{{project.assignableName}}</th>
 										<td>0</td>
 										<td>0</td>
@@ -160,7 +160,7 @@
 										<td>0</td>
 										<td class="green">0</td>
 									</tr>
-									<tr class="subTableRow" ng-repeat="">
+									<tr class="subTableRow" ng-repeat-end>
 										<td colspan="14" class="subTableWrapper">
 											<table class="table subTable">
 												<tbody>
