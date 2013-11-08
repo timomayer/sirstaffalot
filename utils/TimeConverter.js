@@ -3,6 +3,7 @@ var moment = require('moment');
 
 var dbTimeFormat = 'YYYY-MM-DD HH:mm:ss';
 var formTimeFormat = 'DD.MM.YYYY';
+var germanDate = 'DD.MM.YYYY';
 
 exports.convertFormToDBTime = function (dateString) {
 	return moment(dateString, formTimeFormat).format(dbTimeFormat);
@@ -36,4 +37,13 @@ exports.convertYearAndCWToCWString = function (year, cw) {
 		throw new Error('Missing or wrong parameter...');
 	}
 	return year + '_' + cw;
+}
+
+/**
+ * Given a DB-Datetime String, this method returns a readable Date in German syntax
+ * @param dbTime
+ * @returns {*}
+ */
+exports.convertDBTimeToGermanDate = function(dbTime){
+	return moment(dbTime, dbTimeFormat).format(germanDate);
 }
