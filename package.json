@@ -12,6 +12,6 @@
         "mysql": "*",
         "sequelize": "*",
         "moment": "*",
-        "sprintf-js": "*"
+        "sprintf": "*"
     }
 }
