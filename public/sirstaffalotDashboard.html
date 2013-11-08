@@ -1,0 +1,278 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="sirStaffalotApp">
+	<head>
+
+		<meta charset="utf-8">
+
+		<!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/b/378 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- DEV NOTE: whenever possible set the HTTP-Header for X-UA-Compatible too to avoid problems with intranet zones -->
+
+		<title>sir staffalot</title>
+		<meta name="description" content="">
+
+		<!-- Mobile viewport optimized: h5bp.com/viewport -->
+		<meta name="viewport" content="width=device-width">
+
+		<meta property="og:title" content="exampleModule.exampleTemplate">
+		<meta property="og:type" content="article">
+		<meta property="og:url" content="">
+		<meta property="og:image" content="">
+		<meta property="og:description" content="use same as meta description">
+
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+		<!-- page specific meta information -->
+
+		<!-- CSS: implied media=all -->
+		<!-- CSS should be concatenated and minified in production use -->
+		<link rel="stylesheet" href="resources/css/styles.all.css">
+		<!-- end CSS-->
+		<!-- page specific stlyes -->
+
+		<!-- All JavaScript at the bottom, except for Modernizr / Respond.
+		Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+		For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+		<script src="resources/js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+
+	<body role="document">
+
+		<div class="app-wrapper clearfix" ng-controller="tabCtrl">
+
+			<header class="page-header">
+				<h1><img src="_assets/logo.gif" alt="sir staffalot" /><small>v.0000000001 pre alpha</small></h1>
+			</header>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="javascript:void(0);" ng-click="pageTabSelect(0);" ng-class="{true:'active', false:''}[pageTabs[0].active]">Dashboard</a></li>
+						<li><a href="javascript:void(0);" ng-click="pageTabSelect(1);" ng-class="{true:'active', false:''}[pageTabs[1].active]">Projekt eintragen</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="main-wrapper clearfix">
+				<div class="tab-dashboard" ng-controller="dashboardCtrl" ng-class="{true:'visible', false:''}[pageTabs[0].active]">
+					
+				</div>
+				<div class="tab-entryProject" ng-controller="staffingPostCtrl" ng-class="{true:'visible', false:''}[pageTabs[1].active]">
+
+					<!-- Form -->
+					<form class="form-horizontal" role="form"  >
+						<div class="form-group">
+							<label for="inputProject" class="col-sm-2 control-label">Projekt</label>
+							<div class="col-sm-8">
+								<input ng-model="Assignable.name" type="text" class="form-control" id="inputProjekt" placeholder="Projekt">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputMail" class="col-sm-2 control-label">E-Mail</label>
+							<div class="col-sm-8">
+								<input ng-model="Assignable.fromEmail" type="email" class="form-control" id="inputMail" placeholder="E-Mail" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputWorkingDays" class="col-sm-2 control-label">Tagwerke</label>
+							<div class="col-sm-2">
+								<input ng-model="Assignable.days" type="text" class="form-control" id="inputWorkingDays" placeholder="Tagwerke">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputForClanderWeek" class="col-sm-2 control-label">Kalenderwoche</label>
+							<div class="input-daterange col-sm-2">
+								<input ng-model="Assignable.startDate" class="form-control" placeholder="01.01.2013" />
+								<span class="">to</span>
+								<input ng-model="Assignable.endDate" class="form-control" placeholder="01.01.2013" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputDescriptionText" class="col-sm-2 control-label">Beschreibung</label>
+							<div class="col-sm-4">
+								<textarea ng-model="Assignable.description" class="form-control" rows="3"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputTimelineNumber" class="col-sm-2 control-label">Timeline-Nr.</label>
+							<div class="col-sm-2">
+								<input ng-model="Assignable.timelineNumber" type="text" class="form-control" id="inputTimelineNumber" placeholder="Timeline-Nr.">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputUIU" class="col-sm-2 control-label">UIU</label>
+							<div class="col-sm-2">
+								<select ng-model="Assignable.fromBusinessUnit" class="form-control">
+									<option value="B2B">B2B</option>
+									<option value="B2C">B2C</option>
+									<option value="M&P">M&P</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button ng-click="createStaffing()" type="submit" class="btn btn-default">Sign in</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="tab-dashing" ng-controller="staffingCtrl" ng-class="{true:'visible', false:''}[pageTabs[2].active]">
+					<div class="row">
+						<div class="detailWidget">
+							<h1>Fat Fred</h1>
+							<div>
+								
+								<div class="detailDatepicker">
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<span class="assign">to</span>
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<p class="DetailGreen">70%</p>
+								</div>
+								
+								<div class="detailList">
+									<ul>
+										<li><a href="">Armin</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>Leadbox: 0TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">David</a>
+											<div class="progress">
+												<span style="width: 85%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Jonas</a>
+											<div class="progress">
+												<span style="width: 63%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Markus</a>
+											<div class="progress">
+												<span style="width: 23%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Timo</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>Leadbox: 2TW</li>
+														<li>Teamorga: 1TW</li>
+														<li>Urlaub: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="detailFooter">
+									<input type="button" name="" value="Tasks"><p class="detailGreen">Free Space: 4TW</p>
+								</div>
+							</div>
+						</div>
+						<div class="detailWidget">
+							<h1>David</h1>
+							<div>
+								
+								<div class="detailDatepicker">
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<span class="assign">to</span>
+									<input ng-change="changeDatepicker()" class="" placeholder="KW44" />
+									<p class="DetailYellow">85%</p>
+								</div>
+								
+								<div class="detailList">
+									<ul>
+										<li><a href="">Leadbox</a>
+											<div class="progress">
+												<span style="width: 33%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 1TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Teamorga</a>
+											<div class="progress">
+												<span style="width: 85%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 2TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										<li><a href="">Urlaub</a>
+											<div class="progress">
+												<span style="width: 63%">
+													<div><ul>
+														<li>David: 2TW</li>
+														<li>Jonas: 1TW</li>
+														<li>Markus: 1TW</li>
+													</div>
+												</span>
+											</div>
+										</li>
+										
+									</ul>
+								</div>
+								<div class="detailFooter">
+									<input type="button" name="" value="Tasks"><p class="detailYellow">Free Space: 1TW</p>
+								</div>
+							</div>
+							
+
+
+						</div>
+					</div>
+						
+				</div>
+
+				<footer id="footer" role="contentinfo">
+
+				</footer>
+			</div>
+		</div>
+		<script src="resources/js/vendor/jquery-2.0.3.min.js"></script>
+		<script src="resources/js/vendor/angular.min.js"></script>
+		<script src="resources/modules/bootstrap/js/bootstrap.min.js"></script>
+		<script src="resources/js/modules/bootstrap-datepicker.js"></script>
+		<script src="resources/js/vendor/moment-with-langs.min.js"></script>
+
+		<script src="resources/js/main.js"></script>
+		<script src="app/app.js"></script>
+
+		<script src="app/controllers/tabCtrl.js"></script>
+
+		<script src="app/controllers/dashboardCtrl.js"></script>
+
+		<script src="app/controllers/staffingPostCtrl.js"></script>
+
+		<script src="app/controllers/staffingCtrl.js"></script>
+		<script src="app/services/staffingStorage.js"></script>
+		<script src="app/services/resourcesStorage.js"></script>
+	</body>
+</html>
