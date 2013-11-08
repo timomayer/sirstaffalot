@@ -14,8 +14,13 @@ staffalotApp.controller('staffingPostCtrl', function TodoCtrl($scope, $http) {
             method : 'POST',
             url : '/insert/assignable',
             data : $scope.Assignable
-        }) .success(function (res) {
-            $scope.sirStaffalotApp;
-        });
+        }) .success(function(data, status, headers, config) {
+			$('.tab-entryProject .alert-success').toggleClass('hidden');
+        })
+			.
+		error(function(data, status, headers, config) {
+			$('.tab-entryProject .alert-danger').toggleClass('hidden');
+	
+		});
        }
       });

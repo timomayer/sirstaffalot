@@ -17,13 +17,15 @@ module.exports = {
 
 	list: function (fromCW, toCW, callback) {
 
-		var sql = sprintf(assignmentsSQL, fromCW.year, fromCW.cw, toCW.year, toCW.cw);
-		log.info(sql);
-		sequelize.query(sql, null, {raw: true}).success(function (resultSet) {
-			callback(null, resultSet);
-		}).error(function (err) {
-				callback(err);
-			});
+//		var sql = sprintf(assignmentsSQL, fromCW.year, fromCW.cw, toCW.year, toCW.cw);
+//
+//		sequelize.query(sql, null, {raw: true}).success(function (resultSet) {
+//			callback(null, resultSet);
+//		}).error(function (err) {
+//				callback(err);
+//			});
+		callback(null, mock);
+
 	},
 	insertAssignment: function (postBody, callback) {
 
@@ -40,6 +42,163 @@ module.exports = {
 	}
 
 };
+
+var mock = [
+	{
+		"assignableName": "Crazy App",
+		"assignableType": "project",
+		"startDate": "2013-11-09T00:00:00.000Z",
+		"endDate": "2013-12-01T00:00:00.000Z",
+		"assignableId": 2,
+		"cw": 44,
+		"teamMemberId": 1,
+		"teamMemberType": "internal",
+		"days": 4.5,
+		"year": 2013,
+		"teamMemberName": "David",
+		"assignableDays": 10.5
+	},
+	{
+		"assignableName": "Crazy App",
+		"assignableType": "project",
+		"startDate": "2013-11-09T00:00:00.000Z",
+		"endDate": "2013-12-01T00:00:00.000Z",
+		"assignableId": 2,
+		"cw": 45,
+		"teamMemberId": 1,
+		"teamMemberType": "internal",
+		"days": 2,
+		"year": 2013,
+		"teamMemberName": "David",
+		"assignableDays": 10.5
+	},
+	{
+		"assignableName": "Crazy App",
+		"assignableType": "project",
+		"startDate": "2013-11-09T00:00:00.000Z",
+		"endDate": "2013-12-01T00:00:00.000Z",
+		"assignableId": 2,
+		"cw": 45,
+		"teamMemberId": 2,
+		"teamMemberType": "internal",
+		"days": 2,
+		"year": 2013,
+		"teamMemberName": "Markus",
+		"assignableDays": 10.5
+	},
+	{
+		"assignableName": "Crazy App",
+		"assignableType": "project",
+		"startDate": "2013-11-09T00:00:00.000Z",
+		"endDate": "2013-12-01T00:00:00.000Z",
+		"assignableId": 2,
+		"cw": 45,
+		"teamMemberId": 3,
+		"teamMemberType": "internal",
+		"days": 1,
+		"year": 2013,
+		"teamMemberName": "Timo",
+		"assignableDays": 10.5
+	},
+	{
+		"assignableName": "Crazy App",
+		"assignableType": "project",
+		"startDate": "2013-11-09T00:00:00.000Z",
+		"endDate": "2013-12-01T00:00:00.000Z",
+		"assignableId": 2,
+		"cw": 46,
+		"teamMemberId": 1,
+		"teamMemberType": "internal",
+		"days": 2,
+		"year": 2013,
+		"teamMemberName": "David",
+		"assignableDays": 10.5
+	},
+	{
+		"assignableName": "Crazy App",
+		"assignableType": "project",
+		"startDate": "2013-11-09T00:00:00.000Z",
+		"endDate": "2013-12-01T00:00:00.000Z",
+		"assignableId": 2,
+		"cw": 46,
+		"teamMemberId": 2,
+		"teamMemberType": "internal",
+		"days": 1.75,
+		"year": 2013,
+		"teamMemberName": "Markus",
+		"assignableDays": 10.5
+	},
+	{
+		"assignableName": "Fancy SUV",
+		"assignableType": "project",
+		"startDate": "2013-09-09T00:00:00.000Z",
+		"endDate": "2013-10-09T00:00:00.000Z",
+		"assignableId": 1,
+		"cw": 37,
+		"teamMemberId": 1,
+		"teamMemberType": "internal",
+		"days": 3.25,
+		"year": 2013,
+		"teamMemberName": "David",
+		"assignableDays": 5
+	},
+	{
+		"assignableName": "Fancy SUV",
+		"assignableType": "project",
+		"startDate": "2013-09-09T00:00:00.000Z",
+		"endDate": "2013-10-09T00:00:00.000Z",
+		"assignableId": 1,
+		"cw": 38,
+		"teamMemberId": 2,
+		"teamMemberType": "internal",
+		"days": 5,
+		"year": 2013,
+		"teamMemberName": "Markus",
+		"assignableDays": 5
+	},
+	{
+		"assignableName": "Fancy SUV",
+		"assignableType": "project",
+		"startDate": "2013-09-09T00:00:00.000Z",
+		"endDate": "2013-10-09T00:00:00.000Z",
+		"assignableId": 1,
+		"cw": 44,
+		"teamMemberId": 3,
+		"teamMemberType": "internal",
+		"days": 3,
+		"year": 2013,
+		"teamMemberName": "Timo",
+		"assignableDays": 5
+	},
+	{
+		"assignableName": "sick",
+		"assignableType": "project",
+		"startDate": null,
+		"endDate": null,
+		"assignableId": 9,
+		"cw": 38,
+		"teamMemberId": 2,
+		"teamMemberType": "internal",
+		"days": 2,
+		"year": 2013,
+		"teamMemberName": "Markus",
+		"assignableDays": null
+	},
+	{
+		"assignableName": "vacation",
+		"assignableType": "project",
+		"startDate": null,
+		"endDate": null,
+		"assignableId": 7,
+		"cw": 46,
+		"teamMemberId": 1,
+		"teamMemberType": "internal",
+		"days": 3,
+		"year": 2013,
+		"teamMemberName": "David",
+		"assignableDays": null
+	}
+]
 
 
 
