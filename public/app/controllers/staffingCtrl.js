@@ -14,6 +14,11 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
     $scope.editedTodo = null;
     $scope.filter = {};
     $scope.filter.cat = {};
+	
+	$scope.calenderweek;
+	
+	console.log($scope.calenderweek)
+	
 /*
     leadStorage.get().success(function (data, status, headers, config) {
         $scope.leads = data;
