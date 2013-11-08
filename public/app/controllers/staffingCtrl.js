@@ -34,18 +34,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 	};
 
-	function cwRangeArray(start, end) {
-		var jA = 0;
-		var returnV = 0;
-		startA = start.split('_');
-		endA = end.split('_');
-		if (parseInt(startA[0]) == parseInt(endA[0])) {
-			return parseInt(endA[1]) - parseInt(startA[1]);
-		} else if (parseInt(startA[0]) < parseInt(endA[0])) {
-			var diffY = parseInt(endA[0]) - parseInt(startA[0]) - 1;
-			var diffYx;
-		}
-	}
 
 	function mapResultsetToProjectAssignment(resultSet, cwRange) {
 		var resultJSON = {};
@@ -108,7 +96,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 		var resultArray = [];
 		while ((fromCW <= toCW && fromYear === toYear) || (fromYear < toYear)) {
-			resultArray.push(fromYear + '_' + fromCW);
+			resultArray.push(fromYear + '_' + fromCW < 10 ? '0' + fromCW : fromCW);
 
 			if (fromCW === 52) {
 				if (moment('31.12.' + fromYear, 'DD.MM.YYYY').isoWeeks === 53) {
