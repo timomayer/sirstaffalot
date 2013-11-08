@@ -14,7 +14,8 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	$scope.cwRange.cwEnd = 2;
 
 	staffingStorage.getProjects().success(function(data, status, headers, config) {
-		$scope.leads = data;
+		$scope.projectsData = mapResultsetToProjectAssignment(data);
+		console.log($scope.projectsData);
 	});
 
 	$scope.$watch('cwRange', function() {
@@ -26,9 +27,36 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 			$scope.resourcesData = data;
 		});
 	}, true);
-	
+
 	 $scope.changeDatepicker = function() {
 		$scope.cwRange.cwStart = $('.cwPick1').val();
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
 	};
+
+	function mapResultsetToProjectAssignment(resultSet) {
+		var resultJSON = {};
+		angular.forEach(resultSet, function(currentRow) {
+
+			var cwCoord = currentRow.year + '_' + currentRow.cw;
+
+			if (!resultJSON[currentRow.assignableId]) {
+				resultJSON[currentRow.assignableId] = {};
+				resultJSON[currentRow.assignableId].assignableName = currentRow.assignableName;
+			}
+			if (!resultJSON[currentRow.assignableId]['cws']) {
+				resultJSON[currentRow.assignableId]['cws'] = {};
+			}
+			if (!resultJSON[currentRow.assignableId]['cws'][cwCoord]) {
+				resultJSON[currentRow.assignableId]['cws'][cwCoord] = [];
+			}
+			resultJSON[currentRow.assignableId]['cws'][cwCoord].push({
+				teamMemberId: currentRow.teamMemberId,
+				teamMemberName: currentRow.teamMemberName,
+				days: currentRow.days});
+
+
+		});
+		return resultJSON;
+	}
+
 });

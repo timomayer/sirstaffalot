@@ -1,14 +1,3 @@
-[
-	{ assignableName: 'Fancy SUV',
-		assignableId: 1,
-		cw: 37,
-		teamMemberId: 1,
-		days: 3.25,
-		teamMemberName: 'David',
-		assignableDays: 5 }
-]
-
-
 /**
  * MAPS
  * @param resultSet
@@ -24,6 +13,7 @@ function mapResultsetToProjectAssignment(resultSet) {
 		if (!resultJSON[currentRow.assignableId]) {
 			resultJSON[currentRow.assignableId] = {};
 			resultJSON[currentRow.assignableId].assignableName = currentRow.assignableName;
+			resultJSON[currentRow.assignableId].assignableType = currentRow.assignableType;
 		}
 		if (!resultJSON[currentRow.assignableId]['cws']) {
 			resultJSON[currentRow.assignableId]['cws'] = {};
@@ -34,43 +24,41 @@ function mapResultsetToProjectAssignment(resultSet) {
 		resultJSON[currentRow.assignableId]['cws'][cwCoord].push({
 			teamMemberId: currentRow.teamMemberId,
 			teamMemberName: currentRow.teamMemberName,
+			teamMemberType: currentRow.teamMemberType,
 			days: currentRow.days});
-
-
 	});
 	return resultJSON;
 }
 
-
+/**
+ * MAPS
+ * @param resultSet
+ * @returns {{}}
+ */
 function mapResultsetToTeamMemberAssignment(resultSet) {
 	var resultJSON = {};
 
 	_.each(resultSet, function (currentRow) {
-		var project_name = currentRow[0];
-		var project_id = currentRow[1];
 
-		var cw = currentRow[2];
-		var userId = currentRow[3];
-		var days = currentRow[4];
-		var userName = currentRow[5];
-		var project_days = currentRow[6];
+		var cwCoord = currentRow.year + '_' + currentRow.cw;
 
-		if (!resultJSON[currentRow.assignableId]) {
-			resultJSON[project_id] = {};
-			resultJSON[project_id].name = project_name;
-			resultJSON[project_id].project_days = project_days;
+		if (!resultJSON[currentRow.teamMemberId]) {
+			resultJSON[currentRow.teamMemberId] = {};
+			resultJSON[currentRow.teamMemberId].teamMemberName = currentRow.teamMemberName;
+			resultJSON[currentRow.teamMemberId].teamMemberType = currentRow.teamMemberType;
 		}
-		if (!resultJSON[project_id][cw]) {
-			resultJSON[project_id][cw] = {};
+		if (!resultJSON[currentRow.teamMemberId]['cws']) {
+			resultJSON[currentRow.teamMemberId]['cws'] = {};
 		}
-		if (!resultJSON[project_id][cw][userId]) {
-			resultJSON[project_id][cw][userId] =
-			{
-				days: days,
-				name: userName
-			}
+		if (!resultJSON[currentRow.teamMemberId]['cws'][cwCoord]) {
+			resultJSON[currentRow.teamMemberId]['cws'][cwCoord] = [];
 		}
-
+		resultJSON[currentRow.teamMemberId]['cws'][cwCoord].push({
+			assignableId: currentRow.assignableId,
+			assignableName: currentRow.assignableName,
+			assignableType: currentRow.assignableType,
+			days: currentRow.days
+		});
 	});
 	return resultJSON;
 }
