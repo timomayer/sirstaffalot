@@ -148,7 +148,7 @@
 								</thead>
 								<tbody>
 									<tr ng-repeat-start="project in projectsData">
-										<th>{{project.assignableName}}</th>
+										<th>{{project.assignableName}} <span class="small">({{project.assignableDays}}TW)</span></th>
 										<td ng-repeat="cw in project.cwsSum">{{cw}}</td>
 										<td class="green">0</td>
 									</tr>
@@ -156,52 +156,9 @@
 										<td colspan="14" class="subTableWrapper">
 											<table class="table subTable">
 												<tbody>
-													<tr>
-														<th>Timo</th>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td></td>
-													</tr>
-													<tr>
-														<th>Markus</th>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="2"></td>
-														<td><input type="text" name="" maxlength="4" value="0,5"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td><input type="text" name="" maxlength="4" value="2"></td>
-														<td><input type="text" name="" maxlength="4" value="5"></td>
-														<td></td>
-													</tr>
-													<tr>
-														<th>Jan</th>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
-														<td><input type="text" name="" maxlength="4" value="0"></td>
+													<tr ng-repeat="team in project.teamMember">
+														<th>team.userName</th>
+														<td ng-repeat="teamTws in project.teamMember"><input type="text" name="" maxlength="4" value="teamTws.days"></td>
 														<td></td>
 													</tr>
 												</tbody>
