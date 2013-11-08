@@ -26,17 +26,41 @@ module.exports = {
 			});
 
 	},
-	insertAssignment: function (postBody, callback) {
 
-		var newAssignment = Assignment.build(postBody);
-		newAssignment.save()
-			.success(function (result) {
-				callback(null, result);
-			})
-			.error(function (err) {
-				callback(err);
+	insertOrUdateAssignment: function (assignmentData, daysToAllocate, callback) {
+
+		// f**** hell: Sequelize can not update entities with composed primary keys.
+		// so we do a delete and insert instead. Pain in the ass!
+		Assignment.destroy(assignmentData).success(function() {
+			assignmentData.days = daysToAllocate;
+			Assignment.create(assignmentData)
+				.success(function(result) {
+					callback(null, result);
+				}).error(function(err) {
+					callback(err);
+				});
+		});
+
+
+		/*console.log(assignmentData);
+		Assignment.findOrCreate(assignmentData)
+			.success(function(assignment, created) {
+				console.log(assignment.cw);
+				console.log(assignment.year);
+				console.log(assignment.AssignableId);
+				console.log(assignment.TeamMemberId);
+
+				assignment.days = daysToAllocate;
+				assignment.save()
+					.success(function() {
+						console.log("sucess");
+						callback(null, result);
+					}).error(function(err) {
+						console.log("Error: "+err);
+						callback(err);
+					});
 			});
-
+		*/
 
 	}
 
