@@ -10,8 +10,8 @@
 staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, staffingStorage, resourcesStorage) {
 
 	$scope.cwRange = {};
-	$scope.cwRange.cwStart = 1;
-	$scope.cwRange.cwEnd = 2;
+	$scope.cwRange.cwStart = '2013_44';
+	$scope.cwRange.cwEnd = '2014_01';
 
 	staffingStorage.getProjects().success(function(data, status, headers, config) {
 		$scope.projectsData = mapResultsetToProjectAssignment(data);
@@ -31,6 +31,15 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		$scope.cwRange.cwStart = $('.cwPick1').val();
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
 	};
+
+	function getCwRangeArray(start, end) {
+		var diff = end - start;
+		var returnArray = [];
+		for(i=0; i<=diff;i++) {
+			returnArray.push()
+		}
+		return
+	}
 
 	function mapResultsetToProjectAssignment(resultSet) {
 		var resultJSON = {};
