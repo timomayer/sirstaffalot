@@ -65,6 +65,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				days: currentRow.days
 			});
 		});
+
 		angular.forEach(resultJSON, function (project, assignableId) {
 			resultJSON[assignableId]['cwsSum'] = {};
 			angular.forEach(cwRange, function (cwCoord) {
@@ -75,7 +76,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				else {
 					resultJSON[assignableId]['cwsSum'][cwCoord] = 0;
 					angular.forEach(resultJSON[assignableId]['cws'][cwCoord], function (teamMember) {
-						if()
 						resultJSON[assignableId]['cwsSum'][cwCoord] += teamMember.days;
 					})
 				}
