@@ -24,11 +24,11 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 	
 	$scope.$watch('getTwValue', function() {
 		if($scope.getTwValue.days !== 999) {
-			console.log($projectsData);
+			console.log($scope.getTwValue.days);
 			  $http({
             method : 'POST',
             url : '/insert/assignable',
-            data : $scope.Assignable
+            data : $scope.getTwValue
         }) .success(function(data, status, headers, config) {
 			$('.tab-entryProject .alert-success').toggleClass('hidden');
         })
