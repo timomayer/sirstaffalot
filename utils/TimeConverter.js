@@ -15,7 +15,6 @@ exports.convertFormToDBTime = function (dateString) {
  * @returns {{year: YYYY, cw: CW}}
  */
 exports.convertCWStringToTimeJSON = function (cwString) {
-
 	var splitArray = cwString.split('_');
 	if (splitArray.length !== 2
 		|| splitArray[0].length !== 4
