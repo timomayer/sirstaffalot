@@ -14,6 +14,9 @@ function mapResultsetToProjectAssignment(resultSet) {
 			resultJSON[currentRow.assignableId] = {};
 			resultJSON[currentRow.assignableId].assignableName = currentRow.assignableName;
 			resultJSON[currentRow.assignableId].assignableType = currentRow.assignableType;
+			resultJSON[currentRow.assignableId].startDate = currentRow.startDate;
+			resultJSON[currentRow.assignableId].endDate = currentRow.endDate;
+
 		}
 		if (!resultJSON[currentRow.assignableId]['cws']) {
 			resultJSON[currentRow.assignableId]['cws'] = {};
@@ -57,6 +60,8 @@ function mapResultsetToTeamMemberAssignment(resultSet) {
 			assignableId: currentRow.assignableId,
 			assignableName: currentRow.assignableName,
 			assignableType: currentRow.assignableType,
+			startDate: currentRow.startDate,
+			endDate: currentRow.endDate,
 			days: currentRow.days
 		});
 	});

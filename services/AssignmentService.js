@@ -3,7 +3,7 @@ var log = require('../utils/logger.js');
 var sequelize = require('../model/model.js').sequelize;
 var sprintf = require('sprintf').sprintf;
 
-var assignmentsSQL = "select assignable.name assignableName, assignable.type assignableType, assignable.id assignableId, assignment.cw, teammember.id teamMemberId, teammember.type teamMemberType, assignment.days, assignment.year, teammember.name teamMemberName, assignable.days assignableDays from assignment " +
+var assignmentsSQL = "select assignable.name assignableName, assignable.type assignableType, assignable.startDate, assignable.endDate, assignable.id assignableId, assignment.cw, teammember.id teamMemberId, teammember.type teamMemberType, assignment.days, assignment.year, teammember.name teamMemberName, assignable.days assignableDays from assignment " +
 	"inner join assignable on assignable.id = assignment.AssignableId " +
 	"inner join teammember on teammember.id = assignment.TeamMemberId" +
 	" where " +

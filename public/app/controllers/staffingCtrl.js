@@ -15,7 +15,6 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 
 	staffingStorage.getProjects().success(function(data, status, headers, config) {
 		$scope.projectsData = mapResultsetToProjectAssignment(data);
-		console.log($scope.projectsData);
 	});
 
 	$scope.$watch('cwRange', function() {
@@ -28,7 +27,7 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		});
 	}, true);
 
-	 $scope.changeDatepicker = function() {
+	$scope.changeDatepicker = function() {
 		$scope.cwRange.cwStart = $('.cwPick1').val();
 		$scope.cwRange.cwEnd = $('.cwPick2').val();
 	};
