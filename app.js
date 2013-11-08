@@ -15,7 +15,7 @@ var app = express();
 var log = require('./utils/logger.js');
 var basicDataRoute = require('./routes/BasicdataRoute');
 var assignmentRoute = require('./routes/AssignmentRoute');
-
+var email = require('./routes/EmailRoute.js');
 
 // ******* EXPRESS MODULES
 app.set('port', process.env.PORT || 3000);
@@ -33,6 +33,8 @@ app.get('/list/assignments', assignmentRoute.listAssignments);
 app.post('/insert/assignment', assignmentRoute.insertAssignment);
 app.post('/insert/assignable', basicDataRoute.insertAssignable);
 app.post('/insert/teamMember', basicDataRoute.insertTeamMember);
+
+app.get('/trigger/assignmentMail', email.triggerAssignmentMail);
 
 
 // ******* ERROR HANDLING

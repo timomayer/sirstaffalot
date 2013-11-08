@@ -119,10 +119,16 @@
 					<div class="row">
 						<div class="span12">
 							<h2>Projekte</h2>
+
 							<div class="input-daterange col-sm-2" style="float:right">
-								<input ng-change="changeDatepicker()" ng-model="cwRange.cwStart" class="form-control cwPick1" placeholder="01.01.2013" />
+								<input type="hidden" ng-change="changeDatepicker()" ng-model="cwRange.cwStart" class="form-control cwPick1" placeholder="01.01.2013" />
 								<span class="assign">to</span>
 								<input ng-change="changeDatepicker()" ng-model="cwRange.cwEnd" class="form-control cwPick2" placeholder="01.01.2013" />
+							</div>
+							<div class="col-sm-2 phantomButtons">
+								<input type="text" class="form-control cwPick1Phantom" placeholder="1" />
+								<span class="assign">to</span>
+								<input type="text" class="form-control cwPick2Phantom" placeholder="2" />
 							</div>
 							<table class="table topTable">
 								<thead>

@@ -57,11 +57,15 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 				teamMemberType: currentRow.teamMemberType,
 				days: currentRow.days
 			});
-			resultJSON[currentRow.assignableId]['cwsSum'] = 0;
-			angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt) {
-				resultJSON[currentRow.assignableId]['cwsSum'] = resultJSON[currentRow.assignableId]['cwsSum'] + crt[0].days;
+			resultJSON[currentRow.assignableId]['cwsSum'] = {};
+			angular.forEach(resultJSON[currentRow.assignableId]['cws'], function(crt, crtkey) {
+				resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = 0;
+				angular.forEach(crt, function(cr) {
+					console.log(crtkey);
+					resultJSON[currentRow.assignableId]['cwsSum'][crtkey] = resultJSON[currentRow.assignableId]['cwsSum'][crtkey] + cr.days;
+				});
 			});
-			console.log(resultJSON[currentRow.assignableId]['cwsSum']);
+			//console.log(resultJSON[currentRow.assignableId]['cwsSum']);
 		});
 		return resultJSON;
 	}
