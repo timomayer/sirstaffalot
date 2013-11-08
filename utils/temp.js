@@ -61,7 +61,7 @@ function mapResultsetToTeamMemberAssignment(resultSet) {
 			assignableName: currentRow.assignableName,
 			assignableType: currentRow.assignableType,
 			startDate: currentRow.startDate,
-			endDate: currentRow.endDate
+			endDate: currentRow.endDate,
 			days: currentRow.days
 		});
 	});
