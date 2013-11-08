@@ -56,7 +56,12 @@
 					<a href="javascript:void(0);" ng-click="pageTabSelect(2);">Staffing</a>
 				</div>
 				<div class="tab-entryProject" ng-controller="staffingPostCtrl" ng-class="{true:'visible', false:''}[pageTabs[1].active]">
-
+					<div class="alert alert-success hidden">
+						Der Eintrag wurde erfolgreich gespeichert!
+					</div>
+					<div class="alert alert-danger hidden">
+						Irgendwas is ziemlich schief gelaufen!
+					</div>
 					<!-- Form -->
 					<form class="form-horizontal" role="form"  >
 						<div class="form-group">

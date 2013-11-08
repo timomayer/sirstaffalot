@@ -10,10 +10,14 @@ and open the template in the editor.
 
 
 .input-daterange {
-display: none;
+	display: none;
 }
 
-.phantomButtons {
+.form-group .input-daterange {
+	display: block;
+}
+
+.phantomButtons, .form-group .input-daterange {
 	float: right;
 	width: 260px;
 }
