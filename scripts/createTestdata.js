@@ -10,35 +10,35 @@ var Assignment = models['Assignment'];
 
 log.info('Adding testdata')
 
-log.info('TeamMembers: '+teamMembersJson);
+log.info('TeamMembers: ' + teamMembersJson);
 TeamMember
-    .bulkCreate(teamMembersJson)
-    .success(function() {
-        TeamMember.findAll().success(function(teamMember) {
-            log.info(teamMember.name);
-        });
-    }).error(function(error) {
-        log.error(error);
-    });
+	.bulkCreate(teamMembersJson)
+	.success(function () {
+		TeamMember.findAll().success(function (teamMember) {
+			log.info(teamMember.name);
+		});
+	}).error(function (error) {
+		log.error(error);
+	});
 
-log.info('Assignable: '+assignablesJson);
+log.info('Assignable: ' + assignablesJson);
 Assignable
-    .bulkCreate(assignablesJson)
-    .success(function() {
-        Assignable.findAll().success(function(assignable) {
-            log.info(assignable.name);
-        });
-    }).error(function(error) {
-        log.error(error);
-    });
+	.bulkCreate(assignablesJson)
+	.success(function () {
+		Assignable.findAll().success(function (assignable) {
+			log.info(assignable.name);
+		});
+	}).error(function (error) {
+		log.error(error);
+	});
 
-log.info('Assignments: '+assignmentsJson);
+log.info('Assignments: ' + assignmentsJson);
 Assignment
-    .bulkCreate(assignmentsJson)
-    .success(function() {
-        Assignment.findAll().success(function(assignment) {
-            log.info(assignment);
-        });
-    }).error(function(error) {
-        log.error(error);
-    });
+	.bulkCreate(assignmentsJson)
+	.success(function () {
+		Assignment.findAll().success(function (assignment) {
+			log.info(assignment);
+		});
+	}).error(function (error) {
+		log.error(error);
+	});

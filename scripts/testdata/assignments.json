@@ -1,58 +1,58 @@
 [
-    {
-        "AssignableId": 1,
-        "TeamMemberId": 1,
-        "cw": 37,
-        "year": 2013,
-        "days": 3
-    },
-    {
-        "AssignableId": 2,
-        "TeamMemberId": 1,
-        "cw": 44,
-        "year": 2013,
-        "days": 4
-    },
-    {
-        "AssignableId": 2,
-        "TeamMemberId": 1,
-        "cw": 45,
-        "year": 2013,
-        "days": 2
-    },
-    {
-        "AssignableId": 2,
-        "TeamMemberId": 1,
-        "cw": 46,
-        "year": 2013,
-        "days": 2
-    },
-    {
-        "AssignableId": 7,
-        "TeamMemberId": 1,
-        "cw": 46,
-        "year": 2013,
-        "days": 3
-    },
-    {
-        "AssignableId": 1,
-        "TeamMemberId": 2,
-        "cw": 38,
-        "year": 2013,
-        "days": 5
-    },
-    {
-        "AssignableId": 9,
-        "TeamMemberId": 2,
-        "cw": 38,
-        "year": 2013,
-        "days": 2
-    },
-    {
-        "AssignableId": 1,
-        "TeamMemberId": 3,
-        "cw": 44,
-        "year": 2013,
-        "days": 3
-    }
+	{
+		"AssignableId": 1,
+		"TeamMemberId": 1,
+		"cw": 37,
+		"year": 2013,
+		"days": 3
+	},
+	{
+		"AssignableId": 2,
+		"TeamMemberId": 1,
+		"cw": 44,
+		"year": 2013,
+		"days": 4
+	},
+	{
+		"AssignableId": 2,
+		"TeamMemberId": 1,
+		"cw": 45,
+		"year": 2013,
+		"days": 2
+	},
+	{
+		"AssignableId": 2,
+		"TeamMemberId": 1,
+		"cw": 46,
+		"year": 2013,
+		"days": 2
+	},
+	{
+		"AssignableId": 7,
+		"TeamMemberId": 1,
+		"cw": 46,
+		"year": 2013,
+		"days": 3
+	},
+	{
+		"AssignableId": 1,
+		"TeamMemberId": 2,
+		"cw": 38,
+		"year": 2013,
+		"days": 5
+	},
+	{
+		"AssignableId": 9,
+		"TeamMemberId": 2,
+		"cw": 38,
+		"year": 2013,
+		"days": 2
+	},
+	{
+		"AssignableId": 1,
+		"TeamMemberId": 3,
+		"cw": 44,
+		"year": 2013,
+		"days": 3
+	}
 ]

@@ -5,42 +5,42 @@ var TeamMember = require('../model/model.js')['TeamMember'];
 var _ = require('underscore');
 
 module.exports = {
-    insertAssignable: function (postBody, callback) {
+	insertAssignable: function (postBody, callback) {
 
-        if (postBody.startDate) {
-            postBody.startDate = timeConverter.convertFormToDBTime(postBody.startDate);
-        }
-        if (postBody.endDate) {
-            postBody.endDate = timeConverter.convertFormToDBTime(postBody.endDate);
-        }
+		if (postBody.startDate) {
+			postBody.startDate = timeConverter.convertFormToDBTime(postBody.startDate);
+		}
+		if (postBody.endDate) {
+			postBody.endDate = timeConverter.convertFormToDBTime(postBody.endDate);
+		}
 
-        var newAssignable = Assignable.build(postBody).error(function (err) {
-            log.error('Validation-Error');
-            callback(err);
-        });
+		var newAssignable = Assignable.build(postBody).error(function (err) {
+			log.error('Validation-Error');
+			callback(err);
+		});
 
-        newAssignable.save()
-            .success(function (result) {
-                callback(null, result);
-            })
-            .error(function (err) {
-                // Side-Info: ErrNo for bad validation is 1048
-                callback(err);
-            });
+		newAssignable.save()
+			.success(function (result) {
+				callback(null, result);
+			})
+			.error(function (err) {
+				// Side-Info: ErrNo for bad validation is 1048
+				callback(err);
+			});
 
-    },
+	},
 
-    insertTeamMember: function (postBody, callback) {
+	insertTeamMember: function (postBody, callback) {
 
-        var newTeamMember = TeamMember.build(postBody);
-        newTeamMember.save()
-            .success(function (result) {
-                callback(null, result);
-            })
-            .error(function (err) {
-                callback(err);
-            });
-    }
+		var newTeamMember = TeamMember.build(postBody);
+		newTeamMember.save()
+			.success(function (result) {
+				callback(null, result);
+			})
+			.error(function (err) {
+				callback(err);
+			});
+	}
 
 };
 

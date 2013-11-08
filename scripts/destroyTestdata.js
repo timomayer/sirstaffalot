@@ -10,26 +10,26 @@ var Assignable = models['Assignable'];
 var Assignment = models['Assignment'];
 
 
-_.each(teamMembersJson, function(teamMember) {
-    TeamMember
-        .destroy({"id":teamMember.id})
-        .success(function(destroyedTeamMember) {
-            log.info('TeamMember destroyed: '+destroyedTeamMember);
-        });
+_.each(teamMembersJson, function (teamMember) {
+	TeamMember
+		.destroy({"id": teamMember.id})
+		.success(function (destroyedTeamMember) {
+			log.info('TeamMember destroyed: ' + destroyedTeamMember);
+		});
 });
 
-_.each(assignablesJson, function(assignable) {
-    Assignable
-        .destroy({"id":assignable.id})
-        .success(function(destroyedAssignable) {
-            log.info('Assignable destroyed: '+destroyedAssignable);
-        });
+_.each(assignablesJson, function (assignable) {
+	Assignable
+		.destroy({"id": assignable.id})
+		.success(function (destroyedAssignable) {
+			log.info('Assignable destroyed: ' + destroyedAssignable);
+		});
 });
 
-_.each(assignmentsJson, function(assignment) {
-    Assignment
-        .destroy(assignment)
-        .success(function(destroyedAssignment) {
-            log.info('Assignment destroyed: '+destroyedAssignment);
-        });
+_.each(assignmentsJson, function (assignment) {
+	Assignment
+		.destroy(assignment)
+		.success(function (destroyedAssignment) {
+			log.info('Assignment destroyed: ' + destroyedAssignment);
+		});
 });

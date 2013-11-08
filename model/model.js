@@ -8,32 +8,32 @@ var config = require('../config.json').development.mySQL;
  */
 
 var sequelize = new Sequelize(config.dbName, config.username, config.password, {
-    host: config.host,
-    port: config.port,
-    logging: log.info,
-    dialect: 'mysql'
+	host: config.host,
+	port: config.port,
+	logging: log.info,
+	dialect: 'mysql'
 });
 
 /**
  * MODEL IMPLEMENATION
  */
 var models = [
-    'Assignable',
-    'TeamMember',
-    'Assignment'
+	'Assignable',
+	'TeamMember',
+	'Assignment'
 ];
 /**
  * export every model
  */
 
 models.forEach(function (model) {
-    module.exports[model] = sequelize.import(__dirname + '/' + model);
+	module.exports[model] = sequelize.import(__dirname + '/' + model);
 });
 
 // describe relationships
 (function (m) {
-    m.TeamMember.hasMany(m.Assignable, { joinTableModel: m.Assignment });
-    m.Assignable.hasMany(m.TeamMember, { joinTableModel: m.Assignment });
+	m.TeamMember.hasMany(m.Assignable, { joinTableModel: m.Assignment });
+	m.Assignable.hasMany(m.TeamMember, { joinTableModel: m.Assignment });
 })(module.exports);
 
 
