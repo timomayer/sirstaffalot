@@ -6,9 +6,13 @@
  * - retrieves and persists the model via the todoStorage service
  * - exposes the model to the template and provides event handlers
  */
-staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, staffingStorage, resourcesStorage) {
+staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location, staffingStorage, resourcesStorage, $http) {
 
 	$scope.cwRange = {};
+	$scope.getTwValue = {};
+	$scope.getTwValue.days = 999;
+	$scope.getTwValue.teamMemberId = 999;
+	$scope.getTwValue.cw = '2999_52';
 	$scope.cwRange.cwStart = '2013_44';
 	$scope.cwRange.cwEnd = '2014_01';
 	$scope.cwRangeArray = [];
@@ -17,6 +21,24 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 		$scope.projectsData = mapResultsetToProjectAssignment(data, turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd));
 		$scope.cwRangeArray = turnFromAndToCwToRangeArray($scope.cwRange.cwStart, $scope.cwRange.cwEnd);
 	});
+	
+	$scope.$watch('getTwValue', function() {
+		if($scope.getTwValue.days !== 999) {
+			console.log($projectsData);
+			  $http({
+            method : 'POST',
+            url : '/insert/assignable',
+            data : $scope.Assignable
+        }) .success(function(data, status, headers, config) {
+			$('.tab-entryProject .alert-success').toggleClass('hidden');
+        })
+			.
+		error(function(data, status, headers, config) {
+			$('.tab-entryProject .alert-danger').toggleClass('hidden');
+	
+		});
+		}
+	}, true)
 
 	$scope.$watch('cwRange', function () {
 
