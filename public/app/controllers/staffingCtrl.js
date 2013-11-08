@@ -113,6 +113,10 @@ staffalotApp.controller('staffingCtrl', function staffingCtrl($scope, $location,
 					fromYear++;
 				}
 			}
+			else if (fromCW === 53) {
+				fromCW = 1;
+				fromYear++;
+			}
 			else {
 				fromCW++;
 			}
