@@ -13,8 +13,10 @@ $(document).ready(function() {
 		todayHighlight: true
 	}).on('changeDate', function() {
 		$('input[ng-model], select[ng-model]').each(function() {
+			$(this).trigger('input');
 			angular.element(this).controller('ngModel').$setViewValue($(this).val());
 		});
+
 		changeToKw();
 	});
 
